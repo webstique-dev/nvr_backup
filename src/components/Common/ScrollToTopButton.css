@@ -1,0 +1,38 @@
+/* ===================================================================
+   ScrollToTopButton — Mistral AI Design System (DESIGN.md)
+   =================================================================== */
+
+.scroll-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: var(--z-nav);
+  width: 44px;
+  height: 44px;
+  border-radius: var(--rounded-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-ink);
+  border: 1px solid var(--color-ink);
+  box-shadow: var(--shadow-3);
+  color: var(--color-on-dark);
+  font-size: var(--fs-body-resp);
+  transition:
+    transform    var(--duration-fast) var(--ease-premium),
+    background   var(--duration-fast) var(--ease-standard);
+}
+
+.scroll-top:hover {
+  background-color: var(--color-charcoal);
+  transform: translateY(-3px);
+}
+
+@media (max-width: 640px) {
+  .scroll-top {
+    bottom: 18px;
+    right: 18px;
+    width: 40px;
+    height: 40px;
+  }
+}

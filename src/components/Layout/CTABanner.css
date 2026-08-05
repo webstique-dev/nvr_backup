@@ -1,0 +1,100 @@
+/* ===================================================================
+   CTA Banner — Mistral AI Design System (DESIGN.md)
+
+   cta-banner-cream token: cream bg, ink text, Editorial heading
+   =================================================================== */
+
+.cta-banner {
+  padding: var(--spacing-section-lg) 0;
+  background-color: var(--color-canvas);
+}
+
+/* ─── Inner panel ─────────────────────────────────────────────────── */
+.cta-banner__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-xxl);
+  padding: var(--spacing-section);
+  background: linear-gradient(135deg, #FFFFFF 0%, #F5F9FF 50%, #EEF6FF 100%);
+  border-radius: var(--rounded-lg);
+  border: 1px solid var(--color-hairline-soft);
+  box-shadow: var(--shadow-2);
+}
+
+/* ─── Content ─────────────────────────────────────────────────────── */
+.cta-banner__content {
+  flex: 1;
+  min-width: 280px;
+}
+
+.cta-banner__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h1-resp);
+  font-weight: 400;
+  line-height: var(--lh-hero);
+  letter-spacing: var(--ls-hero);
+  color: var(--color-primary-blue);
+  max-width: 22ch;
+  margin-top: var(--spacing-xs);
+}
+
+.cta-banner__description {
+  margin-top: var(--spacing-md);
+  font-family: var(--font-body);
+  font-size: var(--fs-body-md);
+  line-height: var(--lh-body-md);
+  letter-spacing: var(--ls-body);
+  color: var(--color-slate);
+  max-width: 52ch;
+}
+
+/* ─── Actions ─────────────────────────────────────────────────────── */
+.cta-banner__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ─── Responsive — Tablet (≤1024px) ─────────────────────────────── */
+@media (max-width: 1024px) {
+  .cta-banner {
+    padding: var(--spacing-section) 0;
+  }
+
+  .cta-banner__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--spacing-xxl);
+  }
+
+  .cta-banner__title {
+    max-width: none;
+  }
+}
+
+/* ─── Responsive — Mobile (≤640px) ──────────────────────────────── */
+@media (max-width: 640px) {
+  .cta-banner {
+    padding: var(--spacing-section-sm) 0;
+  }
+
+  .cta-banner__inner {
+    padding: var(--spacing-xl);
+    border-radius: var(--rounded-lg);
+  }
+
+  .cta-banner__actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .cta-banner__actions .btn {
+    justify-content: center;
+    width: 100%;
+  }
+}

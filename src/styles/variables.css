@@ -1,0 +1,170 @@
+/* ===================================================================
+   Design Tokens — NVR Quality Solutions Brand System
+   =================================================================== */
+
+:root {
+
+  /* ─── NVR Brand Colors ─────────────────────────────────────────── */
+  --color-primary-blue:   #0F3FB8;
+  --color-royal-blue:     #1E63E9;
+  --color-accent-blue:    #3FA9FF;
+  --color-primary-red:    #E31B23;
+  --color-dark-red:       #B11217;
+
+  /* Aliases for brand compatibility */
+  --color-primary:        #E31B23;      /* Primary CTA Red */
+  --color-primary-deep:   #B11217;      /* Primary Red Hover */
+  --color-on-primary:     #ffffff;
+  --color-brand-blue:     #0F3FB8;      /* Primary Brand Blue */
+  --color-brand-royal:    #1E63E9;      /* Royal Blue Links & Accents */
+
+  /* Soft sky blue palette stops */
+  --color-blue-50:        #f5f9ff;
+  --color-blue-100:       #eef6ff;
+  --color-blue-200:       #e0eeff;
+  --color-blue-300:       #ddeeff;
+  --color-blue-400:       #bcdcff;
+
+  /* ─── Neutral Colors ───────────────────────────────────────────── */
+  --color-canvas:         #ffffff;      /* Primary Background */
+  --color-surface:        #fafafa;      /* Secondary Background */
+  --color-surface-soft:   #f5f9ff;      /* Soft Blue Section BG */
+  --color-surface-cream:  #f8fafc;
+  --color-surface-cream-soft: #f5f9ff;
+  --color-surface-code:   #0f172a;
+  --color-footer-bg:      #f5f9ff;
+
+  /* ─── Text Colors ─────────────────────────────────────────────── */
+  --color-ink:            #0f172a;      /* Primary Text (Dark Slate) */
+  --color-slate:          #475569;      /* Secondary Text */
+  --color-steel:          #64748b;      /* Muted Text */
+  --color-stone:          #64748b;
+  --color-muted:          #94a3b8;      /* Disabled Text */
+
+  /* On-surface text */
+  --color-on-dark:        #ffffff;
+  --color-on-dark-muted:  #94a3b8;
+  --color-on-cream:       #0f172a;
+
+  /* ─── Borders / Hairlines ─────────────────────────────────────── */
+  --color-hairline:       #e5e7eb;
+  --color-hairline-soft:  #d9e2ec;
+  --color-hairline-strong:#cbd5e1;
+
+  /* ─── Semantic & Links ────────────────────────────────────────── */
+  --color-link:           #1e63e9;
+  --color-link-hover:     #e31b23;
+  --color-success:        #16a34a;
+  --color-warning:        #f59e0b;
+  --color-error:          #dc2626;
+  --color-info:           #2563eb;
+
+  /* ─── Typography — Font Families ─────────────────────────────── */
+  --font-display:   'PP Editorial Old', 'Times New Roman', Georgia, serif;
+  --font-body:      'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-code:      'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
+
+  /* ─── Typography — Sizes ──────────────────────────────────────── */
+  --fs-hero:        84px;
+  --fs-display-lg:  64px;
+  --fs-h1:          52px;
+  --fs-stat:        56px;
+  --fs-h2:          36px;
+  --fs-h3:          28px;
+  --fs-h4:          22px;
+  --fs-h5:          18px;
+  --fs-subtitle:    18px;
+  --fs-body-md:     16px;
+  --fs-body-sm:     14px;
+  --fs-caption:     13px;
+  --fs-micro:       12px;
+  --fs-micro-uc:    11px;
+  --fs-btn:         14px;
+  --fs-code:        14px;
+
+  /* Responsive fluid font scale (clamp) across 320px–1920px+ */
+  --fs-hero-resp:     clamp(2rem, 5.5vw + 0.8rem, 4.75rem);
+  --fs-display-resp:  clamp(1.75rem, 4vw + 0.6rem, 3.5rem);
+  --fs-h1-resp:       clamp(1.7rem, 3.2vw + 0.55rem, 2.9rem);
+  --fs-h2-resp:       clamp(1.5rem, 2.6vw + 0.5rem, 2.25rem);
+  --fs-h3-resp:       clamp(1.2rem, 2vw + 0.25rem, 1.75rem);
+  --fs-subtitle-resp: clamp(1rem, 1.2vw + 0.6rem, 1.125rem);
+  --fs-body-resp:     clamp(0.95rem, 0.6vw + 0.75rem, 1.05rem);
+  --fs-body-sm-resp:  clamp(0.875rem, 0.3vw + 0.75rem, 0.95rem);
+  --fs-btn-resp:      clamp(0.875rem, 0.5vw + 0.7rem, 1rem);
+  --fs-caption-resp:  clamp(0.72rem, 0.4vw + 0.6rem, 0.8rem);
+  --fs-micro-resp:    clamp(0.7rem, 0.25vw + 0.6rem, 0.75rem);
+
+  /* ─── Typography — Line Heights ───────────────────────────────── */
+  --lh-hero:        1.05;
+  --lh-display:     1.08;
+  --lh-h1:          1.12;
+  --lh-h2:          1.20;
+  --lh-h3:          1.25;
+  --lh-h4:          1.30;
+  --lh-h5:          1.35;
+  --lh-subtitle:    1.50;
+  --lh-body-md:     1.65;
+  --lh-body-sm:     1.60;
+  --lh-card-desc:   1.55;
+  --lh-caption:     1.40;
+
+  /* ─── Letter Spacing ──────────────────────────────────────────── */
+  --ls-hero:        -0.03em;
+  --ls-display:     -0.02em;
+  --ls-h1:          -0.02em;
+  --ls-h2:          -0.02em;
+  --ls-body:        0;
+  --ls-btn:         0.01em;
+  --ls-micro-uc:    0.08em;
+
+  /* ─── Spacing ─────────────────────────────────────────────────── */
+  --spacing-xxs:        4px;
+  --spacing-xs:         8px;
+  --spacing-sm:         12px;
+  --spacing-md:         16px;
+  --spacing-lg:         20px;
+  --spacing-xl:         24px;
+  --spacing-xxl:        32px;
+  --spacing-xxxl:       40px;
+  --spacing-section-sm: 48px;
+  --spacing-section:    64px;
+  --spacing-section-lg: 96px;
+  --spacing-hero:       120px;
+  --section-padding-mobile: clamp(3rem, 7vw, 4.25rem);
+  --section-padding-desktop: clamp(4.25rem, 8vw, 6rem);
+
+  /* ─── Border Radius ───────────────────────────────────────────── */
+  --rounded-xs:    4px;
+  --rounded-sm:    6px;
+  --rounded-md:    8px;   /* buttons, inputs */
+  --rounded-lg:    12px;  /* cards, panels */
+  --rounded-xl:    16px;
+  --rounded-xxl:   20px;
+  --rounded-full:  9999px; /* badges only */
+
+  /* ─── Elevation / Shadows ─────────────────────────────────────── */
+  --shadow-0:  none;
+  --shadow-1:  rgba(15, 23, 42, 0.04) 0px 1px 2px 0px;
+  --shadow-2:  rgba(15, 63, 184, 0.08) 0px 10px 30px 0px;
+  --shadow-3:  rgba(15, 63, 184, 0.14) 0px 16px 40px -4px;
+  --shadow-4:  rgba(15, 63, 184, 0.20) 0px 24px 60px -8px;
+  --shadow-button-red: 0 8px 24px rgba(227, 27, 35, 0.25);
+  --shadow-navbar: 0 4px 20px rgba(15, 23, 42, 0.08);
+
+  /* ─── Motion ──────────────────────────────────────────────────── */
+  --ease-standard:  ease;
+  --ease-premium:   cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast:  150ms;
+  --duration-base:  200ms;
+  --duration-slow:  300ms;
+
+  /* ─── Layout ──────────────────────────────────────────────────── */
+  --max-width:      1280px;
+  --nav-height:     64px;
+
+  /* ─── Z-index ─────────────────────────────────────────────────── */
+  --z-nav:   100;
+  --z-modal: 200;
+  --z-toast: 300;
+}

@@ -36,7 +36,7 @@ const Hero = () => {
       <div className="container hero__inner">
         {/* Left Content */}
         <div className="hero__content">
-          <motion.div
+          {/* <motion.div
             className="hero__badge"
             variants={fadeUp}
             initial={shouldReduceMotion ? { opacity: 1, y: 0 } : 'hidden'}
@@ -45,7 +45,7 @@ const Hero = () => {
           >
             <span className="hero__badge-dot" aria-hidden="true" />
             Healthcare Quality Training &amp; Consultancy
-          </motion.div>
+          </motion.div> */}
 
           <motion.h1
             className="hero__heading"
@@ -70,7 +70,7 @@ const Hero = () => {
             knowledge and practical skills needed to implement globally recognized quality standards.
           </motion.p>
 
-          <motion.p
+          {/* <motion.p
             className="hero__description hero__description--secondary"
             variants={fadeUp}
             initial={shouldReduceMotion ? { opacity: 1, y: 0 } : 'hidden'}
@@ -80,7 +80,7 @@ const Hero = () => {
             Are you a student looking to build a rewarding career? Or a healthcare organization
             preparing for accreditation? Whatever your goal, our programs are designed to bridge
             the gap between theory and real-world practice.
-          </motion.p>
+          </motion.p> */}
 
           <motion.div
             className="hero__actions-wrapper"

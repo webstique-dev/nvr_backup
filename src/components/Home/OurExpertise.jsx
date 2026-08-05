@@ -1,8 +1,4 @@
-import { useRef } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
   LuChartBar,
   LuShieldCheck,
@@ -10,8 +6,6 @@ import {
   LuHandshake,
 } from 'react-icons/lu';
 import './OurExpertise.css';
-
-gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const expertiseCards = [
   {
@@ -49,67 +43,41 @@ const expertiseCards = [
 ];
 
 const OurExpertise = () => {
-  const containerRef = useRef(null);
   const shouldReduceMotion = useReducedMotion();
 
-  useGSAP(
-    () => {
-      const prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (prefersReduce) return;
-
-      gsap.from('.expertise__header', {
-        opacity: 0,
-        y: 28,
-        duration: 0.8,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: '.expertise__header',
-          start: 'top 85%',
-        },
-      });
-
-      gsap.from('.expertise__card', {
-        opacity: 0,
-        y: 40,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: '.expertise__grid',
-          start: 'top 80%',
-        },
-      });
-    },
-    { scope: containerRef }
-  );
-
   return (
-    <section className="expertise section section--light" ref={containerRef}>
+    <section className="expertise section section--light">
       <div className="expertise__bg" aria-hidden="true">
         <div className="expertise__glow" />
       </div>
       <div className="container">
-        <div className="expertise__header">
+        <motion.div
+          className="expertise__header"
+          initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 28 }}
+          whileInView={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        >
           <span className="eyebrow-light">Our Expertise</span>
           <h2 className="expertise__heading">
             Comprehensive Training &amp;{' '}
             <span className="expertise__heading-highlight">Consultancy Services</span>
           </h2>
-        </div>
+        </motion.div>
 
         <div className="expertise__grid">
-          {expertiseCards.map((card) => {
+          {expertiseCards.map((card, index) => {
             const Icon = card.icon;
             return (
               <motion.article
                 key={card.id}
                 id={`expertise-card-${card.id}`}
                 className="expertise__card"
-                initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+                initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 28 }}
                 whileInView={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                whileHover={shouldReduceMotion ? undefined : { y: -4, scale: 1.01 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: index * 0.12 }}
+                whileHover={shouldReduceMotion ? undefined : { y: -3, scale: 1.01 }}
               >
                 <div className="expertise__card-header">
                   <span className="expertise__card-number" aria-hidden="true">

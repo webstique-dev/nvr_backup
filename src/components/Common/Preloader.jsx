@@ -24,6 +24,16 @@ export default function Preloader({ onFinish }) {
     onFinishRef.current = onFinish;
   }, [onFinish]);
 
+  // Lock page scroll while the preloader is visible
+  useEffect(() => {
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, []);
+
   // Rotate taglines every 1.1s while active
   useEffect(() => {
     if (phase === 'exiting') return;

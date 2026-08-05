@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion, fadeUp } from '../../animations/motion';
 import Button from '../Common/Button';
 import './CTABanner.css';
 
@@ -18,11 +18,10 @@ const CTABanner = ({
       <div className="container">
         <motion.div
           className="cta-banner__inner"
-          initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-          whileInView={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          animate={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 1, y: [0, -1.5, 0], scale: [1, 1.004, 1] }}
+          variants={fadeUp}
+          initial={shouldReduceMotion ? 'visible' : 'hidden'}
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
         >
           <div className="cta-banner__content">
             {eyebrow && <span className="eyebrow">{eyebrow}</span>}

@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, fadeUp } from '../animations/motion';
 import {
   LuChartBar,
   LuShieldCheck,
@@ -14,16 +14,6 @@ import {
 } from 'react-icons/lu';
 import CTABanner from '../components/Layout/CTABanner';
 import './Services.css';
-
-/* ─── Animation variants ─────────────────────────────── */
-const fadeUp = {
-  hidden: { opacity: 0, y: 28 },
-  show: (d = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: d },
-  }),
-};
 
 /* ─── Training service cards ─────────────────────────── */
 const trainingServices = [
@@ -121,7 +111,8 @@ const Services = () => {
               className="eyebrow"
               variants={fadeUp}
               initial="hidden"
-              animate="show"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
               custom={0.05}
             >
               Our Services
@@ -131,7 +122,8 @@ const Services = () => {
               className="svc-hero__heading"
               variants={fadeUp}
               initial="hidden"
-              animate="show"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
               custom={0.12}
             >
               Lasting Solutions for{' '}
@@ -142,7 +134,8 @@ const Services = () => {
               className="svc-hero__para"
               variants={fadeUp}
               initial="hidden"
-              animate="show"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
               custom={0.2}
             >
               We provide specialized training and consultancy services that help healthcare
@@ -154,7 +147,8 @@ const Services = () => {
               className="svc-hero__para"
               variants={fadeUp}
               initial="hidden"
-              animate="show"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
               custom={0.28}
             >
               Our programs are designed to simplify healthcare standards, promote patient safety,
@@ -167,7 +161,8 @@ const Services = () => {
           <motion.div
             className="svc-hero__visual"
             initial={{ opacity: 0, x: 48, scale: 0.96 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1], delay: 0.18 }}
           >
             <div className="svc-hero__img-frame">

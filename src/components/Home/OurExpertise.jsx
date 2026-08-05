@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion, fadeUp, staggerContainer } from '../../animations/motion';
 import {
   LuChartBar,
   LuShieldCheck,
@@ -52,33 +52,31 @@ const OurExpertise = () => {
       </div>
       <div className="container">
         <motion.div
-          className="expertise__header"
-          initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 28 }}
-          whileInView={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="expertise__content"
+          variants={staggerContainer}
+          initial={shouldReduceMotion ? 'visible' : 'hidden'}
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
         >
-          <span className="eyebrow-light">Our Expertise</span>
-          <h2 className="expertise__heading">
-            Comprehensive Training &amp;{' '}
-            <span className="expertise__heading-highlight">Consultancy Services</span>
-          </h2>
-        </motion.div>
+          <motion.div className="expertise__header" variants={fadeUp}>
+            <span className="eyebrow-light">Our Expertise</span>
+            <h2 className="expertise__heading">
+              Comprehensive Training &amp;{' '}
+              <span className="expertise__heading-highlight">Consultancy Services</span>
+            </h2>
+          </motion.div>
 
-        <div className="expertise__grid">
-          {expertiseCards.map((card, index) => {
-            const Icon = card.icon;
-            return (
-              <motion.article
-                key={card.id}
-                id={`expertise-card-${card.id}`}
-                className="expertise__card"
-                initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 28 }}
-                whileInView={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.25 }}
-                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: index * 0.12 }}
-                whileHover={shouldReduceMotion ? undefined : { y: -3, scale: 1.01 }}
-              >
+          <div className="expertise__grid">
+            {expertiseCards.map((card, index) => {
+              const Icon = card.icon;
+              return (
+                <motion.article
+                  key={card.id}
+                  id={`expertise-card-${card.id}`}
+                  className="expertise__card"
+                  variants={fadeUp}
+                  whileHover={shouldReduceMotion ? undefined : { y: -3, scale: 1.01 }}
+                >
                 <div className="expertise__card-header">
                   <span className="expertise__card-number" aria-hidden="true">
                     {card.number}
@@ -94,8 +92,9 @@ const OurExpertise = () => {
             );
           })}
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </div>
+  </section>
   );
 };
 

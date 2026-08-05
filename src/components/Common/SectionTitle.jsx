@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, fadeUp } from '../../animations/motion';
 import './SectionTitle.css';
 
 /**
@@ -12,10 +12,11 @@ const SectionTitle = ({ eyebrow, title, description, align = 'left', className =
   return (
     <motion.div
       className={`section-title section-title--${align} ${className}`.trim()}
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.4 }}
-      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.75, ease: 'easeOut' }}
     >
       {eyebrow && <span className="eyebrow">{eyebrow}</span>}
       <h2 className="section-title__heading">{title}</h2>

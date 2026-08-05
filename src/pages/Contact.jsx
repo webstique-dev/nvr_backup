@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, fadeUp } from '../animations/motion';
 import {
   LuPhone,
   LuMail,
@@ -14,16 +14,6 @@ import {
 import InquiryForm from '../components/Contact/InquiryForm';
 import FAQAccordion from '../components/Common/FAQAccordion';
 import './Contact.css';
-
-/* ─── Animation helpers ────────────────────────────── */
-const fadeUp = {
-  hidden: { opacity: 0, y: 28 },
-  show: (d = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: d },
-  }),
-};
 
 /* ─── Contact Info Items ────────────────────────────── */
 const contactDetails = [
@@ -108,7 +98,8 @@ const Contact = () => {
               className="eyebrow-light"
               variants={fadeUp}
               initial="hidden"
-              animate="show"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
               custom={0.05}
             >
               Contact Us
@@ -118,7 +109,8 @@ const Contact = () => {
               className="cnt-hero__heading"
               variants={fadeUp}
               initial="hidden"
-              animate="show"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
               custom={0.12}
             >
               Let&apos;s Start the{' '}
@@ -129,7 +121,8 @@ const Contact = () => {
               className="cnt-hero__para"
               variants={fadeUp}
               initial="hidden"
-              animate="show"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
               custom={0.2}
             >
               Whatever the nature of your query, our team is here to help. Reach out with your
@@ -142,7 +135,8 @@ const Contact = () => {
           <motion.div
             className="cnt-hero__visual"
             initial={{ opacity: 0, x: 48, scale: 0.96 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1], delay: 0.18 }}
           >
             <div className="cnt-hero__img-frame">

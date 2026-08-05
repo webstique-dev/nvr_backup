@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, fadeUp } from '../../animations/motion';
 import './PageBanner.css';
 
 /**

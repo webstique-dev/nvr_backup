@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion, fadeUp, staggerContainer } from '../../animations/motion';
 import {
   LuTarget,
   LuGlobe,
@@ -7,15 +7,6 @@ import {
   LuTrophy,
 } from 'react-icons/lu';
 import './WhyChooseUs.css';
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 28 },
-  show: (delay = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1], delay },
-  }),
-};
 
 const features = [
   {
@@ -74,26 +65,18 @@ const WhyChooseUs = () => {
         </motion.div>
 
         {/* Right: Content */}
-        <div className="why-choose__content">
-          <motion.span
-            className="eyebrow-light"
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.4 }}
-            custom={0}
-          >
+        <motion.div
+          className="why-choose__content"
+          variants={staggerContainer}
+          initial={shouldReduceMotion ? 'visible' : 'hidden'}
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <motion.span className="eyebrow-light" variants={fadeUp} custom={0}>
             Why Choose NVR Quality Solutions
           </motion.span>
 
-          <motion.h2
-            className="why-choose__heading"
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.4 }}
-            custom={0.1}
-          >
+          <motion.h2 className="why-choose__heading" variants={fadeUp} custom={0.1}>
             Learn the Skills That{' '}
             <span className="text-gradient-light">Modern Healthcare Demands</span>
           </motion.h2>
@@ -106,9 +89,6 @@ const WhyChooseUs = () => {
                   key={f.title}
                   className="why-choose__feature"
                   variants={fadeUp}
-                  initial={shouldReduceMotion ? { opacity: 1, y: 0 } : 'hidden'}
-                  whileInView={shouldReduceMotion ? { opacity: 1, y: 0 } : 'show'}
-                  viewport={{ once: true, amount: 0.3 }}
                   custom={0.2 + i * 0.1}
                   whileHover={shouldReduceMotion ? undefined : { y: -3, scale: 1.005 }}
                 >
@@ -123,7 +103,7 @@ const WhyChooseUs = () => {
               );
             })}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

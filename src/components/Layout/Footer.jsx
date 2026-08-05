@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { FiArrowUpRight } from 'react-icons/fi';
 import { LuPhone, LuMail, LuMapPin } from 'react-icons/lu';
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion, fadeUp } from '../../animations/motion';
 import './Footer.css';
 
 const FOOTER_LINKS = {

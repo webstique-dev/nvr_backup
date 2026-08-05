@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from '../../animations/motion';
 import { FiPlus } from 'react-icons/fi';
 import ContentPending from './ContentPending';
 import './FAQAccordion.css';

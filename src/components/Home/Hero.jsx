@@ -1,17 +1,8 @@
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion, fadeUp, float, motionTransition } from '../../animations/motion';
 import { LuCircleCheckBig, LuGraduationCap } from 'react-icons/lu';
 import Button from '../Common/Button';
 import StarBorder from '../Common/StarBorder';
 import './Hero.css';
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 32 },
-  show: (delay = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1], delay },
-  }),
-};
 
 const Hero = () => {
   const shouldReduceMotion = useReducedMotion();
@@ -23,7 +14,7 @@ const Hero = () => {
           className="hero__bg-word"
           initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0.8, y: 12 }}
           animate={shouldReduceMotion ? { opacity: 1 } : { opacity: 0.8, y: [12, -8, 12] }}
-          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+          transition={{ duration: 10, repeat: shouldReduceMotion ? 0 : Infinity, ease: 'easeInOut' }}
         >
           QUALITY
         </motion.div>

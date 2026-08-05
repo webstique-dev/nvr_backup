@@ -1,15 +1,6 @@
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion, fadeUp, staggerContainer } from '../../animations/motion';
 import { LuTarget } from 'react-icons/lu';
 import './LearningSection.css';
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 28 },
-  show: (delay = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1], delay },
-  }),
-};
 
 const LearningSection = () => {
   const shouldReduceMotion = useReducedMotion();
@@ -21,15 +12,14 @@ const LearningSection = () => {
       </div>
       <div className="container learning__inner">
         {/* Left: Content */}
-        <div className="learning__content">
-          <motion.span
-            className="eyebrow-light"
-            variants={fadeUp}
-            initial={shouldReduceMotion ? { opacity: 1, y: 0 } : 'hidden'}
-            whileInView={shouldReduceMotion ? { opacity: 1, y: 0 } : 'show'}
-            viewport={{ once: true, amount: 0.4 }}
-            custom={0}
-          >
+        <motion.div
+          className="learning__content"
+          variants={staggerContainer}
+          initial={shouldReduceMotion ? 'visible' : 'hidden'}
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <motion.span className="eyebrow-light" variants={fadeUp} custom={0}>
             Learning Section
           </motion.span>
 
@@ -56,36 +46,15 @@ const LearningSection = () => {
             Learning That Goes Beyond Theory
           </motion.h3>
 
-          <motion.p
-            className="learning__paragraph"
-            variants={fadeUp}
-            initial={shouldReduceMotion ? { opacity: 1, y: 0 } : 'hidden'}
-            whileInView={shouldReduceMotion ? { opacity: 1, y: 0 } : 'show'}
-            viewport={{ once: true, amount: 0.4 }}
-            custom={0.26}
-          >
+          <motion.p className="learning__paragraph" variants={fadeUp} custom={0.26}>
             Participants gain exposure to healthcare scenarios, quality frameworks, patient safety concepts, documentation practices, and implementation strategies that can be applied within healthcare organizations.
           </motion.p>
 
-          <motion.p
-            className="learning__paragraph"
-            variants={fadeUp}
-            initial={shouldReduceMotion ? { opacity: 1, y: 0 } : 'hidden'}
-            whileInView={shouldReduceMotion ? { opacity: 1, y: 0 } : 'show'}
-            viewport={{ once: true, amount: 0.4 }}
-            custom={0.34}
-          >
+          <motion.p className="learning__paragraph" variants={fadeUp} custom={0.34}>
             Our objective is not simply to teach standards. It is to help learners understand how quality systems function in day-to-day healthcare operations.
           </motion.p>
 
-          <motion.div
-            className="learning__stats"
-            variants={fadeUp}
-            initial={shouldReduceMotion ? { opacity: 1, y: 0 } : 'hidden'}
-            whileInView={shouldReduceMotion ? { opacity: 1, y: 0 } : 'show'}
-            viewport={{ once: true, amount: 0.4 }}
-            custom={0.42}
-          >
+          <motion.div className="learning__stats" variants={fadeUp} custom={0.42}>
             <motion.div
               className="learning__stat"
               initial={shouldReduceMotion ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.96 }}
@@ -119,7 +88,7 @@ const LearningSection = () => {
               <span className="learning__stat-label">Healthcare<br />Roles Covered</span>
             </motion.div>
           </motion.div>
-        </div>
+        </motion.div>
 
         {/* Right: Illustration */}
         <motion.div

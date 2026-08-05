@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from '../../animations/motion';
 import { Link } from 'react-router-dom';
 import { FiArrowUpRight } from 'react-icons/fi';
 import './ServiceCard.css';

@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from '../../animations/motion';
 import { FiBookOpen } from 'react-icons/fi';
 import Button from './Button';
 import './TrainingCard.css';

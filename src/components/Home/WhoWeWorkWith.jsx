@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion, fadeUp, staggerContainer } from '../../animations/motion';
 import {
   LuGraduationCap,
   LuStethoscope,
@@ -44,52 +44,49 @@ const audiences = [
 ];
 
 const WhoWeWorkWith = () => {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <section className="who-work section section--light">
       <div className="container">
         <motion.div
-          className="who-work__header"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+          className="who-work__content"
+          variants={staggerContainer}
+          initial={shouldReduceMotion ? 'visible' : 'hidden'}
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
         >
-          <span className="eyebrow-light">Who We Work With</span>
-          <h2 className="who-work__heading">
-            Programs Designed for{' '}
-            <span className="text-gradient-light">Every Healthcare Role</span>
-          </h2>
-        </motion.div>
+          <motion.div className="who-work__header" variants={fadeUp}>
+            <span className="eyebrow-light">Who We Work With</span>
+            <h2 className="who-work__heading">
+              Programs Designed for{' '}
+              <span className="text-gradient-light">Every Healthcare Role</span>
+            </h2>
+          </motion.div>
 
-        <div className="who-work__grid">
-          {audiences.map((item, i) => {
-            const Icon = item.icon;
-            return (
-              <motion.div
-                key={item.id}
-                id={`audience-${item.id}`}
-                className="who-work__card"
-                initial={{ opacity: 0, y: 28 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{
-                  duration: 0.7,
-                  ease: [0.16, 1, 0.3, 1],
-                  delay: i * 0.08,
-                }}
-                whileHover={{ y: -4, transition: { duration: 0.25 } }}
-              >
-                <span className="who-work__card-icon-wrap" aria-hidden="true">
-                  <Icon className="who-work__card-icon" />
-                </span>
-                <p className="who-work__card-label">{item.label}</p>
-                <div className="who-work__card-check" aria-hidden="true">
-                  <LuCheck className="who-work__check-icon" />
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
+          <div className="who-work__grid">
+            {audiences.map((item) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={item.id}
+                  id={`audience-${item.id}`}
+                  className="who-work__card"
+                  variants={fadeUp}
+                  whileHover={shouldReduceMotion ? undefined : { y: -4, transition: { duration: 0.25 } }}
+                >
+                  <span className="who-work__card-icon-wrap" aria-hidden="true">
+                    <Icon className="who-work__card-icon" />
+                  </span>
+                  <p className="who-work__card-label">{item.label}</p>
+                  <div className="who-work__card-check" aria-hidden="true">
+                    <LuCheck className="who-work__check-icon" />
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from '../animations/motion';
 import Button from '../components/Common/Button';
 import './NotFound.css';
 

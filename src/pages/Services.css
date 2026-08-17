@@ -116,7 +116,9 @@
 }
 
 .svc-hero__heading {
+  font-family: var(--font-body);
   font-size: var(--fs-h1-resp);
+  font-weight: 600;
   line-height: 1.08;
   letter-spacing: var(--ls-h2);
   color: var(--color-primary-blue);

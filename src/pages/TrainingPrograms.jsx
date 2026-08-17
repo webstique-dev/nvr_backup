@@ -80,14 +80,14 @@ const programs = [
     ],
   },
   {
-    id: 'camhp-training',
+    id: 'caam-hp-training',
     icon: LuAward,
     number: '05',
-    title: 'CAMHP Training',
+    title: 'CAAM-HP Training',
     description:
-      'Develop an understanding of CAMHP standards and their role in strengthening healthcare quality and patient safety.',
+      'Develop an understanding of CAAM-HP standards and their role in strengthening healthcare quality and patient safety.',
     areas: [
-      'CAMHP framework',
+      'CAAM-HP framework',
       'Compliance requirements',
       'Documentation practices',
       'Process improvement',
@@ -335,91 +335,60 @@ const TrainingPrograms = () => {
           4. WHAT MAKES OUR TRAINING DIFFERENT
       ════════════════════════════════════════════════ */}
       <section className="section section--light tp-different">
-        <div className="container tp-different__inner">
-          {/* Left: Text */}
+        <div className="tp-different__bg" aria-hidden="true">
+          <div className="tp-different__glow" />
+        </div>
+
+        <div className="container">
           <motion.div
-            className="tp-different__content"
-            initial={{ opacity: 0, x: -36 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+            className="tp-section-header"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
           >
             <span className="eyebrow-light">Our Approach</span>
-            <h2 className="tp-different__heading">
-              What Makes Our Training{' '}
-              <span className="text-gradient-light">Different?</span>
-            </h2>
-            <p className="tp-different__para">
-              Learning healthcare quality goes beyond understanding standards. It requires
-              knowing how those standards are applied in real healthcare settings. Every session
-              is designed to combine theory with practical context through:
+            <h2 className="tp-section-heading">What Makes Our Training Different?</h2>
+            <p className="tp-section-sub">
+              Learning healthcare quality goes beyond understanding standards. It requires knowing
+              how those standards are applied in real healthcare settings. Every session is
+              designed to combine theory with practical context through:
             </p>
-
-            <div className="tp-different__items">
-              {differentItems.map((item, i) => {
-                const Icon = item.icon;
-                return (
-                  <motion.div
-                    key={item.id}
-                    id={`diff-${item.id}`}
-                    className="tp-different__item"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1], delay: i * 0.08 }}
-                  >
-                    <div className="tp-different__item-icon" aria-hidden="true">
-                      <Icon className="tp-different__item-icon-svg" />
-                    </div>
-                    <span className="tp-different__item-label">{item.label}</span>
-                  </motion.div>
-                );
-              })}
-            </div>
-
-            <motion.p
-              className="tp-different__closing"
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.4 }}
-              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-            >
-              The result is a learning experience that prepares participants to contribute
-              with confidence from day one.
-            </motion.p>
           </motion.div>
 
-          {/* Right: Visual summary card */}
-          <motion.div
-            className="tp-different__panel"
-            initial={{ opacity: 0, x: 36 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
+          <div className="tp-different__grid">
+            {differentItems.map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={item.id}
+                  id={`diff-${item.id}`}
+                  className="tp-different__card"
+                  initial={{ opacity: 0, y: 28 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: i * 0.07 }}
+                  whileHover={{ y: -4, transition: { duration: 0.22 } }}
+                >
+                  <div className="tp-different__card-icon" aria-hidden="true">
+                    <Icon className="tp-different__card-icon-svg" />
+                  </div>
+                  <p className="tp-different__card-label">{item.label}</p>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          <motion.p
+            className="tp-different__closing"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1], delay: 0.25 }}
           >
-            <div className="tp-different__stat-card">
-              <div className="tp-different__stat">
-                <span className="tp-different__stat-val">5</span>
-                <span className="tp-different__stat-label">Specialized<br />Programs</span>
-              </div>
-              <div className="tp-different__stat-divider" aria-hidden="true" />
-              <div className="tp-different__stat">
-                <span className="tp-different__stat-val">3</span>
-                <span className="tp-different__stat-label">Global<br />Standards</span>
-              </div>
-              <div className="tp-different__stat-divider" aria-hidden="true" />
-              <div className="tp-different__stat">
-                <span className="tp-different__stat-val">100%</span>
-                <span className="tp-different__stat-label">Practical<br />Focus</span>
-              </div>
-            </div>
-
-            <div className="tp-different__badge-list">
-              {['NABH', 'JCI', 'CAMHP'].map(badge => (
-                <span key={badge} className="tp-different__badge">{badge}</span>
-              ))}
-            </div>
-          </motion.div>
+            The result is a learning experience that prepares participants to contribute with
+            confidence from day one.
+          </motion.p>
         </div>
       </section>
 

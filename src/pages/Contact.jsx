@@ -4,7 +4,6 @@ import {
   LuMail,
   LuMapPin,
   LuClock,
-  LuMap,
   LuCheck,
   LuCircleCheckBig,
   LuHeadphones,
@@ -13,6 +12,7 @@ import {
 } from 'react-icons/lu';
 import InquiryForm from '../components/Contact/InquiryForm';
 import FAQAccordion from '../components/Common/FAQAccordion';
+import SectionTitle from '../components/Common/SectionTitle';
 import './Contact.css';
 
 /* ─── Contact Info Items ────────────────────────────── */
@@ -63,7 +63,7 @@ const contactFaqs = [
   {
     question: 'Do you provide certifications?',
     answer:
-      'No. NVR Quality Solutions is a training and consultancy firm. We prepare individuals and healthcare organizations for recognized standards such as NABH, JCI, and CAMHP, but we do not issue certifications.',
+      'No. NVR Quality Solutions is a training and consultancy firm. We prepare individuals and healthcare organizations for recognized standards such as NABH, JCI, and CAAM-HP, but we do not issue certifications.',
   },
   {
     question: 'Can hospitals request customized training programs?',
@@ -73,7 +73,7 @@ const contactFaqs = [
   {
     question: 'How soon can I expect a response?',
     answer:
-      'Our team aims to respond to all inquiries as promptly as possible during our business hours. Expect a maximum of 24 hours turnaround time else give us a call for an immediate response.',
+      'Our team aims to respond to all inquiries during our business hours (Monday - Saturday, 9am - 6pm). Give us a call for immediate assistance during operational hours.',
   },
 ];
 
@@ -95,7 +95,7 @@ const Contact = () => {
           {/* Content */}
           <div className="cnt-hero__content">
             <motion.span
-              className="eyebrow-light"
+              className="eyebrow"
               variants={fadeUp}
               initial="hidden"
               whileInView="visible"
@@ -114,7 +114,7 @@ const Contact = () => {
               custom={0.12}
             >
               Let&apos;s Start the{' '}
-              <span className="hero__highlight">Conversation</span>
+              <span className="text-gradient">Conversation</span>
             </motion.h1>
 
             <motion.p
@@ -148,7 +148,7 @@ const Contact = () => {
               />
               <div className="cnt-hero__img-tag glass">
                 <LuHeadphones className="cnt-hero__tag-icon" aria-hidden="true" />
-                <span>24 Hour Turnaround</span>
+                <span>Business Hours: 9am - 6pm</span>
               </div>
             </div>
           </motion.div>
@@ -156,7 +156,7 @@ const Contact = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════
-          2. CONTACT DETAILS & MAP LOCATION
+          2. CONTACT DETAILS
       ════════════════════════════════════════════════ */}
       <section className="section section--light cnt-details">
         <div className="container">
@@ -168,77 +168,48 @@ const Contact = () => {
             transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
           >
             <span className="eyebrow-light">Reach Out</span>
-            <h2 className="cnt-section-heading">Contact Details &amp; Location</h2>
+            <h2 className="cnt-section-heading">Contact Details</h2>
           </motion.div>
 
-          <div className="cnt-details__grid">
-            {/* Info Cards */}
-            <div className="cnt-details__cards">
-              {contactDetails.map((item, i) => {
-                const Icon = item.icon;
-                return (
-                  <motion.div
-                    key={item.id}
-                    id={`cnt-detail-${item.id}`}
-                    className="cnt-info-card"
-                    initial={{ opacity: 0, y: 24 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1], delay: i * 0.08 }}
-                    whileHover={{ y: -4, transition: { duration: 0.22 } }}
-                  >
-                    <div className="cnt-info-card__icon-wrap" aria-hidden="true">
-                      <Icon className="cnt-info-card__icon" />
-                    </div>
-                    <div className="cnt-info-card__content">
-                      <h3 className="cnt-info-card__title">{item.title}</h3>
-                      <p className="cnt-info-card__text">
-                        {item.href ? (
-                          <a
-                            href={item.href}
-                            className="cnt-info-card__link"
-                            {...(item.external ? { target: '_blank', rel: 'noreferrer' } : {})}
-                          >
-                            {item.detail}
-                          </a>
-                        ) : (
-                          item.detail
-                        )}
-                      </p>
-                      {item.support && (
-                        <p className="cnt-info-card__support">{item.support}</p>
+          <div className="cnt-details__cards">
+            {contactDetails.map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={item.id}
+                  id={`cnt-detail-${item.id}`}
+                  className="cnt-info-card"
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1], delay: i * 0.08 }}
+                  whileHover={{ y: -4, transition: { duration: 0.22 } }}
+                >
+                  <div className="cnt-info-card__icon-wrap" aria-hidden="true">
+                    <Icon className="cnt-info-card__icon" />
+                  </div>
+                  <div className="cnt-info-card__content">
+                    <h3 className="cnt-info-card__title">{item.title}</h3>
+                    <p className="cnt-info-card__text">
+                      {item.href ? (
+                        <a
+                          href={item.href}
+                          className="cnt-info-card__link"
+                          {...(item.external ? { target: '_blank', rel: 'noreferrer' } : {})}
+                        >
+                          {item.detail}
+                        </a>
+                      ) : (
+                        item.detail
                       )}
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-
-            {/* Map Location Card */}
-            <motion.div
-              className="cnt-map-card"
-              initial={{ opacity: 0, x: 36 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
-            >
-              <div className="cnt-map-card__header">
-                <div className="cnt-map-card__icon-wrap" aria-hidden="true">
-                  <LuMap className="cnt-map-card__icon" />
-                </div>
-                <h3 className="cnt-map-card__title">Map Location</h3>
-              </div>
-
-              <div className="cnt-map-card__body" role="img" aria-label="Map Location Visual">
-                <div className="cnt-map-card__grid-pattern" aria-hidden="true" />
-                <div className="cnt-map-card__pin-wrap">
-                  <LuMapPin className="cnt-map-card__pin-icon" aria-hidden="true" />
-                  <span className="cnt-map-card__pin-pulse" aria-hidden="true" />
-                </div>
-                <p className="cnt-map-card__label">Map Location</p>
-                <span className="cnt-map-card__sublabel">NVR Quality Solutions Headquarters</span>
-              </div>
-            </motion.div>
+                    </p>
+                    {item.support && (
+                      <p className="cnt-info-card__support">{item.support}</p>
+                    )}
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -328,7 +299,7 @@ const Contact = () => {
               <div className="cnt-side-card">
                 <h3 className="cnt-side-card__title">Need Immediate Guidance?</h3>
                 <p className="cnt-side-card__desc">
-                  Whether you are inquiring about NABH, JCI, or CAMHP training, course enrollment, or hospital consultancy services, our team is ready to assist you.
+                  Whether you are inquiring about NABH, JCI, or CAAM-HP training, course enrollment, or hospital consultancy services, our team is ready to assist you.
                 </p>
 
                 <div className="cnt-side-features">
@@ -337,8 +308,8 @@ const Contact = () => {
                       <LuClock className="cnt-side-feature__icon" />
                     </div>
                     <div>
-                      <strong>Rapid Turnaround</strong>
-                      <p>Expect a response within 24 hours</p>
+                      <strong>Prompt Response</strong>
+                      <p>Response during business hours (9am - 6pm)</p>
                     </div>
                   </div>
 
@@ -376,33 +347,17 @@ const Contact = () => {
       {/* ═══════════════════════════════════════════════
           5. FREQUENTLY ASKED QUESTIONS
       ════════════════════════════════════════════════ */}
-      <section className="section section--light cnt-faq">
-        <div className="cnt-faq__bg" aria-hidden="true">
-          <div className="cnt-faq__glow" />
-        </div>
+      <section className="section section--surface cnt-faq">
         <div className="container">
-          <motion.div
-            className="cnt-section-header text-center"
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <span className="eyebrow-light">FAQ</span>
-            <h2 className="cnt-section-heading">
-              Frequently Asked Questions
-            </h2>
-          </motion.div>
-
-          <motion.div
-            className="cnt-faq__wrap"
-            initial={{ opacity: 0, y: 28 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-          >
+          <SectionTitle
+            eyebrow="FAQ"
+            title="Frequently Asked Questions"
+            description="Find answers to common questions about our healthcare quality training and consultancy services."
+            align="center"
+          />
+          <div className="home-faq-wrap">
             <FAQAccordion items={contactFaqs} />
-          </motion.div>
+          </div>
         </div>
       </section>
     </>

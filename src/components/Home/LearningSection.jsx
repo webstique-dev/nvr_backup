@@ -63,7 +63,7 @@ const LearningSection = () => {
               transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
             >
               <span className="learning__stat-value">3</span>
-              <span className="learning__stat-label">Global Standards<br />(NABH, JCI, CAMHP)</span>
+              <span className="learning__stat-label">Global Standards<br />(NABH, JCI, CAAM-HP)</span>
             </motion.div>
             <div className="learning__stat-divider" aria-hidden="true" />
             <motion.div

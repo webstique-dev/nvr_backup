@@ -270,7 +270,7 @@ const About = () => {
             <span className="eyebrow-light">Consultancy</span>
             <h2 className="about-consult__heading">
               Consultancy That Supports{' '}
-              <span className="text-gradient-light">Better Healthcare</span>
+              <span className="text-gradient">Better Healthcare</span>
             </h2>
             <p className="about-consult__intro">
               Alongside training, NVR Quality Solutions provides expert Healthcare Quality

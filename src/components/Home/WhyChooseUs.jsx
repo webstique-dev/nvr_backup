@@ -17,7 +17,7 @@ const features = [
   {
     icon: LuGlobe,
     title: 'Globally Recognized Standards',
-    text: 'Programs aligned to NABH, JCI, and CAMHP frameworks accepted across international healthcare systems.',
+    text: 'Programs aligned to NABH, JCI, and CAAM-HP frameworks accepted across international healthcare systems.',
   },
   {
     icon: LuBuilding2,
@@ -35,7 +35,7 @@ const WhyChooseUs = () => {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="why-choose section section--light">
+    <section className="why-choose section section--surface">
       <div className="container why-choose__inner">
         {/* Left: Illustration */}
         <motion.div

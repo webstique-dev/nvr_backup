@@ -39,7 +39,7 @@ const Home = () => {
       />
 
       {/* FAQ Section — Modern Accordion */}
-      <section className="section section--light">
+      <section className="section section--surface">
         <div className="container">
           <SectionTitle
             eyebrow="FAQ"

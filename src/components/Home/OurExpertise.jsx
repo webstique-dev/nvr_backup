@@ -30,7 +30,7 @@ const expertiseCards = [
     number: '03',
     title: 'Healthcare Accreditation Training',
     description:
-      'Learn the frameworks, processes, documentation, and implementation strategies behind internationally recognized accreditation standards, including NABH Training, JCI Training, and CAMHP awareness programs.',
+      'Learn the frameworks, processes, documentation, and implementation strategies behind internationally recognized accreditation standards, including NABH Training, JCI Training, and CAAM-HP awareness programs.',
   },
   {
     id: 'healthcare-quality-consultancy',

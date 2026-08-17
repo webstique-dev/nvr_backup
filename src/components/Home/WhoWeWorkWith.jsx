@@ -47,7 +47,7 @@ const WhoWeWorkWith = () => {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="who-work section section--light">
+    <section className="who-work section section--surface">
       <div className="container">
         <motion.div
           className="who-work__content"
@@ -79,9 +79,9 @@ const WhoWeWorkWith = () => {
                     <Icon className="who-work__card-icon" />
                   </span>
                   <p className="who-work__card-label">{item.label}</p>
-                  <div className="who-work__card-check" aria-hidden="true">
+                  {/* <div className="who-work__card-check" aria-hidden="true">
                     <LuCheck className="who-work__check-icon" />
-                  </div>
+                  </div> */}
                 </motion.div>
               );
             })}

@@ -59,13 +59,13 @@ const trainingServices = [
     ],
   },
   {
-    id: 'camhp-training',
-    slug: 'camhp-training',
+    id: 'caam-hp-training',
+    slug: 'caam-hp-training',
     icon: LuAward,
     number: '05',
-    title: 'CAMHP Training',
+    title: 'CAAM-HP Training',
     body: [
-      'Our CAMHP Training programs dissect the framework, requirements, and quality principles associated with CAMHP standards. The curriculum is designed to improve awareness and prepare participants for quality-focused roles.',
+      'Our CAAM-HP Training programs dissect the framework, requirements, and quality principles associated with CAAM-HP standards. The curriculum is designed to improve awareness and prepare participants for quality-focused roles.',
     ],
   },
 ];
@@ -326,7 +326,7 @@ const Services = () => {
               <div className="svc-consult__panel-tags">
                 <span className="svc-consult__tag">NABH</span>
                 <span className="svc-consult__tag">JCI</span>
-                <span className="svc-consult__tag">CAMHP</span>
+                <span className="svc-consult__tag">CAAM-HP</span>
               </div>
             </motion.div>
           </div>

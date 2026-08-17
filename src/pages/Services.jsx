@@ -11,63 +11,161 @@ import {
   LuArrowRight,
   LuTarget,
   LuCircleCheckBig,
+  LuStethoscope,
+  LuBuilding2,
+  LuSettings,
+  LuClipboardCheck,
+  LuTrendingUp,
+  LuUsers,
 } from 'react-icons/lu';
 import CTABanner from '../components/Layout/CTABanner';
 import './Services.css';
+import './About.css';
+
+/* ─── What We Do items ────────────────────────────────────── */
+const whatWeDoItems = [
+  { id: 'hqt', icon: LuStethoscope, label: 'Healthcare Quality Training' },
+  { id: 'pst', icon: LuShieldCheck, label: 'Patient Safety Training' },
+  { id: 'hat', icon: LuMedal, label: 'Healthcare Accreditation Training' },
+  { id: 'hqm', icon: LuBuilding2, label: 'Hospital Quality Management' },
+  { id: 'qis', icon: LuSettings, label: 'Quality implementation support' },
+  { id: 'arc', icon: LuClipboardCheck, label: 'Accreditation readiness consultancy' },
+  { id: 'hpi', icon: LuTrendingUp, label: 'Healthcare process improvement' },
+  { id: 'pdp', icon: LuUsers, label: 'Train-the-Trainer Programs' },
+  { id: 'pdp', icon: LuUsers, label: 'Pharmacy Audits' },
+  { id: 'pdp', icon: LuUsers, label: 'Mock Drill Preparations' },
+];
 
 /* ─── Training service cards ─────────────────────────── */
+// const trainingServices = [
+//   {
+//     id: 'healthcare-quality-training',
+//     slug: 'healthcare-quality-training',
+//     icon: LuChartBar,
+//     number: '01',
+//     title: 'Healthcare Quality Training',
+//     body: [
+//       'Our Healthcare Quality Training programs equip students and healthcare professionals. Every student leaves us with the knowledge and skills needed to understand healthcare quality systems, regulatory expectations, and quality improvement methodologies.',
+//       'Participants gain exposure to industry best practices, documentation processes, quality frameworks, and implementation strategies. They can then contribute confidently to quality initiatives within hospitals and healthcare institutions.',
+//     ],
+//   },
+//   {
+//     id: 'patient-safety-training',
+//     slug: 'patient-safety-training',
+//     icon: LuShieldCheck,
+//     number: '02',
+//     title: 'Patient Safety Training',
+//     body: [
+//       'Our Patient Safety Training programs focus on developing a culture of safety by helping participants understand risk management. They also learn incident reporting, quality improvement, and preventive strategies that improve outcomes.',
+//     ],
+//   },
+//   {
+//     id: 'nabh-training',
+//     slug: 'nabh-training',
+//     icon: LuMedal,
+//     number: '03',
+//     title: 'NABH Training',
+//     body: [
+//       'Our NABH Training programs explore the principles, documentation requirements, quality indicators, and implementation processes associated with the National Accreditation Board for Hospitals & Healthcare Providers (NABH).',
+//     ],
+//   },
+//   {
+//     id: 'jci-training',
+//     slug: 'jci-training',
+//     icon: LuGlobe,
+//     number: '04',
+//     title: 'JCI Training',
+//     body: [
+//       'Our JCI Training programs introduce participants to internationally recognized healthcare quality and patient safety standards. Training includes quality management principles, patient-centered standards, documentation, and implementation practices that support organizational excellence.',
+//     ],
+//   },
+//   {
+//     id: 'caam-hp-training',
+//     slug: 'caam-hp-training',
+//     icon: LuAward,
+//     number: '05',
+//     title: 'CAAM-HP Training',
+//     body: [
+//       'Our CAAM-HP Training programs dissect the framework, requirements, and quality principles associated with CAAM-HP standards. The curriculum is designed to improve awareness and prepare participants for quality-focused roles.',
+//     ],
+//   },
+// ];
+
 const trainingServices = [
   {
-    id: 'healthcare-quality-training',
-    slug: 'healthcare-quality-training',
-    icon: LuChartBar,
+    id: 'ipcn-training',
+    slug: 'ipcn-training',
+    icon: LuShieldCheck,
     number: '01',
-    title: 'Healthcare Quality Training',
+    title: 'IPCN Training',
     body: [
-      'Our Healthcare Quality Training programs equip students and healthcare professionals. Every student leaves us with the knowledge and skills needed to understand healthcare quality systems, regulatory expectations, and quality improvement methodologies.',
-      'Participants gain exposure to industry best practices, documentation processes, quality frameworks, and implementation strategies. They can then contribute confidently to quality initiatives within hospitals and healthcare institutions.',
+      'Our IPCN Training programs equip healthcare professionals with the knowledge and practical skills required to strengthen infection prevention and control practices across healthcare settings.',
+      'Participants gain an understanding of infection prevention principles, surveillance, standard precautions, hand hygiene, healthcare-associated infections, and effective infection control practices.',
+    ],
+  },
+  {
+    id: 'ipco-training',
+    slug: 'ipco-training',
+    icon: LuShieldCheck,
+    number: '02',
+    title: 'IPCO Training',
+    body: [
+      'Our IPCO Training programs focus on developing practical expertise in planning, implementing, monitoring, and improving infection prevention and control systems within healthcare organizations.',
+      'Participants learn about infection control policies, surveillance, monitoring, compliance, documentation, and strategies for maintaining a safe healthcare environment.',
     ],
   },
   {
     id: 'patient-safety-training',
     slug: 'patient-safety-training',
     icon: LuShieldCheck,
-    number: '02',
+    number: '03',
     title: 'Patient Safety Training',
     body: [
-      'Our Patient Safety Training programs focus on developing a culture of safety by helping participants understand risk management. They also learn incident reporting, quality improvement, and preventive strategies that improve outcomes.',
+      'Our Patient Safety Training programs focus on developing a strong culture of safety by helping participants understand risk management, incident reporting, quality improvement, and preventive strategies that improve patient outcomes.',
+    ],
+  },
+  {
+    id: 'healthcare-quality-training',
+    slug: 'healthcare-quality-training',
+    icon: LuChartBar,
+    number: '04',
+    title: 'Healthcare Quality Training',
+    body: [
+      'Our Healthcare Quality Training programs equip students and healthcare professionals with the knowledge and skills needed to understand healthcare quality systems, regulatory expectations, and quality improvement methodologies.',
+      'Participants gain exposure to industry best practices, documentation processes, quality frameworks, performance indicators, and implementation strategies.',
     ],
   },
   {
     id: 'nabh-training',
     slug: 'nabh-training',
     icon: LuMedal,
-    number: '03',
+    number: '05',
     title: 'NABH Training',
     body: [
       'Our NABH Training programs explore the principles, documentation requirements, quality indicators, and implementation processes associated with the National Accreditation Board for Hospitals & Healthcare Providers (NABH).',
+      'The program helps participants understand accreditation requirements and prepare healthcare organizations for effective implementation and continuous quality improvement.',
     ],
   },
-  {
-    id: 'jci-training',
-    slug: 'jci-training',
-    icon: LuGlobe,
-    number: '04',
-    title: 'JCI Training',
-    body: [
-      'Our JCI Training programs introduce participants to internationally recognized healthcare quality and patient safety standards. Training includes quality management principles, patient-centered standards, documentation, and implementation practices that support organizational excellence.',
-    ],
-  },
-  {
-    id: 'caam-hp-training',
-    slug: 'caam-hp-training',
-    icon: LuAward,
-    number: '05',
-    title: 'CAAM-HP Training',
-    body: [
-      'Our CAAM-HP Training programs dissect the framework, requirements, and quality principles associated with CAAM-HP standards. The curriculum is designed to improve awareness and prepare participants for quality-focused roles.',
-    ],
-  },
+  // {
+  //   id: 'jci-training',
+  //   slug: 'jci-training',
+  //   icon: LuGlobe,
+  //   number: '06',
+  //   title: 'JCI Training',
+  //   body: [
+  //     'Our JCI Training programs introduce participants to internationally recognized healthcare quality and patient safety standards. Training includes quality management principles, patient-centered standards, documentation, and implementation practices that support organizational excellence.',
+  //   ],
+  // },
+  // {
+  //   id: 'caam-hp-training',
+  //   slug: 'caam-hp-training',
+  //   icon: LuAward,
+  //   number: '07',
+  //   title: 'CAAM-HP Training',
+  //   body: [
+  //     'Our CAAM-HP Training programs explore the framework, requirements, and quality principles associated with CAAM-HP standards. The curriculum is designed to improve awareness and prepare participants for quality-focused roles.',
+  //   ],
+  // },
 ];
 
 /* ─── Consultancy list items ─────────────────────────── */
@@ -182,6 +280,67 @@ const Services = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════
+          2. WHAT WE DO
+      ════════════════════════════════════════════════ */}
+      <section className="section section--dark about-wwd">
+        <div className="about-wwd__bg" aria-hidden="true">
+          <div className="about-wwd__glow" />
+        </div>
+        <div className="container">
+          <motion.div
+            className="about-wwd__header"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <span className="eyebrow">Our Services</span>
+            <h2 className="about-wwd__heading">What We Do</h2>
+            <p className="about-wwd__intro">
+              NVR Quality Solutions offers a range of training and consultancy services focused
+              on healthcare quality and patient safety.
+            </p>
+            <p className="about-wwd__sub-label">Our expertise includes:</p>
+          </motion.div>
+
+          <div className="about-wwd__grid">
+            {whatWeDoItems.map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={item.id}
+                  id={`wwd-${item.id}`}
+                  className="about-wwd__card glass"
+                  initial={{ opacity: 0, y: 28 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: i * 0.07 }}
+                  whileHover={{ y: -5, transition: { duration: 0.25 } }}
+                >
+                  <div className="about-wwd__card-icon" aria-hidden="true">
+                    <Icon className="about-wwd__card-icon-svg" />
+                  </div>
+                  <p className="about-wwd__card-label">{item.label}</p>
+                  <div className="about-wwd__card-accent" aria-hidden="true" />
+                </motion.div>
+              );
+            })}
+          </div>
+
+          <motion.p
+            className="about-wwd__closing"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+          >
+            Every program is designed to provide practical, industry-relevant knowledge. Ones
+            that participants can confidently apply in real healthcare settings.
+          </motion.p>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════
           2. TRAINING SERVICES
       ════════════════════════════════════════════════ */}
       <section className="section section--light svc-training">
@@ -197,7 +356,7 @@ const Services = () => {
             <h2 className="svc-section-heading">Our Training Services</h2>
           </motion.div>
 
-          <div className="svc-training__list">
+          <div className="svc-training__grid">
             {trainingServices.map((svc, i) => {
               const Icon = svc.icon;
               return (
@@ -210,7 +369,7 @@ const Services = () => {
                   viewport={{ once: true, amount: 0.15 }}
                   transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1], delay: i * 0.07 }}
                 >
-                  <div className="svc-card__left">
+                  <div className="svc-card__header">
                     <div className="svc-card__icon-wrap" aria-hidden="true">
                       <Icon className="svc-card__icon" />
                     </div>
@@ -222,14 +381,6 @@ const Services = () => {
                     {svc.body.map((para, j) => (
                       <p key={j} className="svc-card__para">{para}</p>
                     ))}
-                    {/* <Link
-                      to={`/services/${svc.slug}`}
-                      className="svc-card__link"
-                      id={`svc-link-${svc.id}`}
-                    >
-                      Learn more
-                      <LuArrowRight className="svc-card__link-icon" aria-hidden="true" />
-                    </Link> */}
                   </div>
 
                   <div className="svc-card__accent" aria-hidden="true" />

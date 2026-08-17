@@ -13,6 +13,7 @@ import Services from './pages/Services';
 import ServiceDetail from './pages/ServiceDetail';
 import TrainingPrograms from './pages/TrainingPrograms';
 import TrainingDetail from './pages/TrainingDetail';
+import Careers from './pages/Careers';
 import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
 import PrivacyPolicy from './pages/PrivacyPolicy';
@@ -43,6 +44,7 @@ function App() {
               <Route path="/services/:slug" element={<ServiceDetail />} />
               <Route path="/training-programs" element={<TrainingPrograms />} />
               <Route path="/training-programs/:slug" element={<TrainingDetail />} />
+              <Route path="/careers" element={<Careers />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />

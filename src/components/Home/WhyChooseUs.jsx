@@ -11,7 +11,7 @@ import './WhyChooseUs.css';
 const features = [
   {
     icon: LuTarget,
-    title: 'Consultancy-Backed Curriculum',
+    title: 'Consultancy-Led Training',
     text: 'Our training is grounded in real healthcare consultancy experience — not generic content.',
   },
   {

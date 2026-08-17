@@ -8,7 +8,8 @@ const FOOTER_LINKS = {
   Company: [
     { label: 'About', to: '/about' },
     { label: 'Services', to: '/services' },
-    { label: 'Training Programs', to: '/training-programs' },
+    { label: 'Trainings', to: '/training-programs' },
+    { label: 'Careers', to: '/careers' },
     { label: 'Contact', to: '/contact' },
   ],
   Resources: [
@@ -61,7 +62,7 @@ const Footer = () => {
               <img src="/nvr-logo.png" alt="NVR Quality Solutions" className="footer__logo-img" />
             </Link>
             <p className="footer__tagline">
-              Empowering healthcare professionals to build safer, higher-quality
+              Empowering Healthcare Organizations to build safer, higher-quality
               healthcare systems through expert-led training and quality consultancy.
             </p>
             <Link to="/contact" className="footer__cta">

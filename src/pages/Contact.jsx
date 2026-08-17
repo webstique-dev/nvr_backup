@@ -9,6 +9,7 @@ import {
   LuHeadphones,
   LuShieldCheck,
   LuMessageSquare,
+  LuArrowUpRight,
 } from 'react-icons/lu';
 import InquiryForm from '../components/Contact/InquiryForm';
 import FAQAccordion from '../components/Common/FAQAccordion';
@@ -20,31 +21,42 @@ const contactDetails = [
   {
     id: 'phone',
     icon: LuPhone,
-    title: 'Phone',
+    tag: 'Direct Line',
+    title: 'Phone Support',
     detail: '+91 8466040046',
     href: 'tel:+918466040046',
+    actionLabel: 'Call Us Directly',
+    support: 'Speak directly with our healthcare quality advisory team.',
   },
   {
     id: 'email',
     icon: LuMail,
-    title: 'Email',
+    tag: 'Fast Response',
+    title: 'Email Inquiry',
     detail: 'nvrqualitysolutions@gmail.com',
     href: 'mailto:nvrqualitysolutions@gmail.com',
+    actionLabel: 'Send an Email',
+    support: 'We respond to all email inquiries promptly.',
   },
   {
     id: 'address',
     icon: LuMapPin,
+    tag: 'Head Office',
     title: 'Office Address',
     detail: 'Thadepalli, Amaravathi, Andhra Pradesh',
     href: 'https://maps.google.com/?q=Thadepalli,+Amaravathi,+Andhra+Pradesh',
     external: true,
+    actionLabel: 'View Location Map',
+    support: 'Amaravathi, Andhra Pradesh, India.',
   },
   {
     id: 'hours',
     icon: LuClock,
-    title: 'Business Hours',
-    detail: 'Monday - Saturday, 9am - 6pm',
-    support: 'Our team is available during regular business hours to assist you.',
+    tag: '7 Days Active',
+    title: 'Working Hours',
+    detail: '9:00 AM – 9:00 PM',
+    support: 'Available 7 days a week, 12 hours a day (9:00 AM – 9:00 PM) to assist you.',
+    actionLabel: 'Open 7 Days a Week',
   },
 ];
 
@@ -73,7 +85,7 @@ const contactFaqs = [
   {
     question: 'How soon can I expect a response?',
     answer:
-      'Our team aims to respond to all inquiries during our business hours (Monday - Saturday, 9am - 6pm). Give us a call for immediate assistance during operational hours.',
+      'Our team aims to respond to all inquiries during our working hours (9:00 AM – 9:00 PM, 7 days a week). Give us a call for immediate assistance during operational hours.',
   },
 ];
 
@@ -148,7 +160,7 @@ const Contact = () => {
               />
               <div className="cnt-hero__img-tag glass">
                 <LuHeadphones className="cnt-hero__tag-icon" aria-hidden="true" />
-                <span>Business Hours: 9am - 6pm</span>
+                <span>Working Hours: 9:00 AM – 9:00 PM (7 Days)</span>
               </div>
             </div>
           </motion.div>
@@ -158,7 +170,7 @@ const Contact = () => {
       {/* ═══════════════════════════════════════════════
           2. CONTACT DETAILS
       ════════════════════════════════════════════════ */}
-      <section className="section section--light cnt-details">
+      <section className="section section--surface cnt-details">
         <div className="container">
           <motion.div
             className="cnt-section-header"
@@ -185,16 +197,20 @@ const Contact = () => {
                   transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1], delay: i * 0.08 }}
                   whileHover={{ y: -4, transition: { duration: 0.22 } }}
                 >
-                  <div className="cnt-info-card__icon-wrap" aria-hidden="true">
-                    <Icon className="cnt-info-card__icon" />
+                  <div className="cnt-info-card__header">
+                    <div className="cnt-info-card__icon-wrap" aria-hidden="true">
+                      <Icon className="cnt-info-card__icon" />
+                    </div>
+                    {item.tag && <span className="cnt-info-card__badge">{item.tag}</span>}
                   </div>
+
                   <div className="cnt-info-card__content">
                     <h3 className="cnt-info-card__title">{item.title}</h3>
-                    <p className="cnt-info-card__text">
+                    <p className="cnt-info-card__detail">
                       {item.href ? (
                         <a
                           href={item.href}
-                          className="cnt-info-card__link"
+                          className="cnt-info-card__main-link"
                           {...(item.external ? { target: '_blank', rel: 'noreferrer' } : {})}
                         >
                           {item.detail}
@@ -207,6 +223,27 @@ const Contact = () => {
                       <p className="cnt-info-card__support">{item.support}</p>
                     )}
                   </div>
+
+                  {item.actionLabel && (
+                    <div className="cnt-info-card__footer">
+                      {item.href ? (
+                        <a
+                          href={item.href}
+                          className="cnt-info-card__action-link"
+                          {...(item.external ? { target: '_blank', rel: 'noreferrer' } : {})}
+                        >
+                          <span>{item.actionLabel}</span>
+                          <LuArrowUpRight className="cnt-info-card__arrow-icon" aria-hidden="true" />
+                        </a>
+                      ) : (
+                        <span className="cnt-info-card__action-static">
+                          <span>{item.actionLabel}</span>
+                        </span>
+                      )}
+                    </div>
+                  )}
+
+                  <div className="cnt-info-card__accent" aria-hidden="true" />
                 </motion.div>
               );
             })}
@@ -309,7 +346,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <strong>Prompt Response</strong>
-                      <p>Response during business hours (9am - 6pm)</p>
+                      <p>9:00 AM – 9:00 PM (7 Days a Week)</p>
                     </div>
                   </div>
 

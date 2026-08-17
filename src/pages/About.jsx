@@ -29,7 +29,7 @@ const whatWeDoItems = [
   { id: 'qis', icon: LuSettings, label: 'Quality implementation support' },
   { id: 'arc', icon: LuClipboardCheck, label: 'Accreditation readiness consultancy' },
   { id: 'hpi', icon: LuTrendingUp, label: 'Healthcare process improvement' },
-  { id: 'pdp', icon: LuUsers, label: 'Professional development programs' },
+  { id: 'pdp', icon: LuUsers, label: 'Train-the-Trainer Programs' },
 ];
 
 /* ─── Consultancy items ───────────────────────────────────── */
@@ -78,7 +78,7 @@ const About = () => {
               viewport={{ once: true, amount: 0.2 }}
               custom={0.1}
             >
-              Empowering Healthcare Professionals Through{' '}
+              Empowering Healthcare Organizations Through{' '}
               <span className="text-gradient">Expert Consultancy</span>
             </motion.h1>
 
@@ -102,10 +102,7 @@ const About = () => {
               viewport={{ once: true, amount: 0.2 }}
               custom={0.28}
             >
-              As a trusted provider of Healthcare Quality Training and healthcare quality
-              consultancy, we are committed to building the knowledge, skills, and systems
-              required to meet quality standards.
-            </motion.p>
+              As a trusted healthcare quality partner, we provide tailored training and consultancy services designed to meet the unique needs of healthcare organizations, helping them strengthen their quality systems, improve performance, and achieve sustainable outcomes.    </motion.p>
 
             <motion.p
               className="about-hero__para"
@@ -115,9 +112,7 @@ const About = () => {
               viewport={{ once: true, amount: 0.2 }}
               custom={0.36}
             >
-              Our approach combines practical learning with real-world implementation. This way,
-              our participants understand not only what quality standards require, but also how
-              they are successfully applied within environments.
+              Our approach combines practical learning with real-world implementation, while recognizing that every healthcare organization operates with different skill sets, geographic considerations, and resource limitations. Our tailored solutions are designed to work within these constraints, enabling organizations to implement practical, sustainable, and effective quality improvements.
             </motion.p>
 
 
@@ -186,8 +181,7 @@ const About = () => {
               <span className="about-mv-card__eyebrow">Vision</span>
               <h2 className="about-mv-card__title">Our Vision</h2>
               <p className="about-mv-card__body">
-                To be a trusted partner in advancing healthcare quality by training professionals
-                and healthcare organizations to build sustainable quality systems.
+                To be a trusted partner in advancing and implementing healthcare quality standards by training professionals and healthcare organizations to build sustainable quality systems.
               </p>
             </motion.div>
           </div>
@@ -197,7 +191,7 @@ const About = () => {
       {/* ═══════════════════════════════════════════════════════
           3. WHAT WE DO
       ════════════════════════════════════════════════════════ */}
-      <section className="section section--dark about-wwd">
+      {/* <section className="section section--dark about-wwd">
         <div className="about-wwd__bg" aria-hidden="true">
           <div className="about-wwd__glow" />
         </div>
@@ -253,7 +247,7 @@ const About = () => {
             that participants can confidently apply in real healthcare settings.
           </motion.p>
         </div>
-      </section>
+      </section> */}
 
       {/* ═══════════════════════════════════════════════════════
           4. CONSULTANCY SECTION

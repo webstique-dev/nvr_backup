@@ -195,17 +195,17 @@
   background-color: var(--color-surface);
 }
 
-.svc-training__list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-lg);
+.svc-training__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
 }
 
 .svc-card {
   position: relative;
   display: flex;
-  gap: var(--spacing-xl);
-  background: #ffffff;
+  flex-direction: column;
+  background: var(--color-canvas, #ffffff);
   border: 1px solid var(--color-hairline-soft);
   border-radius: var(--rounded-lg);
   padding: var(--spacing-xl);
@@ -213,6 +213,7 @@
   overflow: hidden;
   transition: box-shadow 0.3s var(--ease-premium), transform 0.3s var(--ease-premium),
     border-color 0.3s var(--ease-premium);
+  cursor: default;
 }
 
 .svc-card:hover {
@@ -221,103 +222,80 @@
   border-color: var(--color-royal-blue);
 }
 
-/* Left column — icon + number */
-.svc-card__left {
+.svc-card__header {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: var(--spacing-sm);
-  flex-shrink: 0;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-md);
 }
 
 .svc-card__icon-wrap {
-  width: 64px;
-  height: 64px;
-  border-radius: 18px;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--rounded-md);
   background: var(--color-blue-50);
   border: 1px solid var(--color-hairline-soft);
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .svc-card__icon {
-  width: 28px;
-  height: 28px;
+  width: 22px;
+  height: 22px;
   color: var(--color-primary-blue);
 }
 
 .svc-card__number {
   font-family: var(--font-body);
-  font-size: var(--fs-caption-resp);
+  font-size: var(--fs-micro-uc);
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: var(--ls-micro-uc);
   color: var(--color-primary-red);
 }
 
 /* Body */
 .svc-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
   flex: 1;
 }
 
 .svc-card__title {
   font-family: var(--font-body);
-  font-size: clamp(1.15rem, 2vw, 1.4rem);
-  font-weight: 700;
-  color: var(--color-ink);
-  margin-bottom: var(--spacing-md);
-  line-height: 1.25;
+  font-size: var(--fs-h4);
+  font-weight: 600;
+  color: var(--color-primary-blue);
+  line-height: 1.3;
+  margin-bottom: 0.35rem;
 }
 
 .svc-card__para {
-  font-size: var(--fs-body-sm-resp);
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
   color: var(--color-slate);
   line-height: var(--lh-body-md);
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: 0;
 }
 
-.svc-card__para:last-of-type {
-  margin-bottom: var(--spacing-md);
-}
-
-.svc-card__link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  font-size: var(--fs-body-sm-resp);
-  font-weight: 600;
-  color: var(--color-royal-blue);
-  text-decoration: none;
-  transition: gap 0.25s var(--ease-premium), color 0.2s;
-}
-
-.svc-card__link:hover {
-  gap: 10px;
-  color: var(--color-primary-red);
-}
-
-.svc-card__link-icon {
-  width: 16px;
-  height: 16px;
-  flex-shrink: 0;
-}
-
-/* Left accent bar */
+/* Bottom accent bar on hover */
 .svc-card__accent {
   position: absolute;
-  left: 0;
-  top: 0;
   bottom: 0;
-  width: 4px;
-  background: linear-gradient(180deg, var(--color-primary-blue), var(--color-primary-red));
-  border-radius: 4px 0 0 4px;
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: transform 0.4s var(--ease-premium);
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary-blue), var(--color-primary-red));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--duration-slow) var(--ease-premium);
+  border-radius: 0 0 var(--rounded-lg) var(--rounded-lg);
 }
 
 .svc-card:hover .svc-card__accent {
-  transform: scaleY(1);
+  transform: scaleX(1);
 }
 
 /* ─────────────────────────────────────────────────────
@@ -565,6 +543,10 @@
   .svc-why__grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .svc-training__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* ─────────────────────────────────────────────────────
@@ -645,6 +627,10 @@
   }
 
   .svc-why__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .svc-training__grid {
     grid-template-columns: 1fr;
   }
 

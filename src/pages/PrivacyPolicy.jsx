@@ -1,9 +1,20 @@
 import PageBanner from '../components/Layout/PageBanner';
 import ContentPending from '../components/Common/ContentPending';
+import SEO from '../components/Common/SEO';
+import { seoConfig } from '../config/seoConfig';
+import { generateWebPageSchema } from '../utils/structuredData';
 
 const PrivacyPolicy = () => {
   return (
     <>
+      <SEO
+        {...seoConfig.privacyPolicy}
+        structuredData={generateWebPageSchema({
+          title: seoConfig.privacyPolicy.title,
+          description: seoConfig.privacyPolicy.description,
+          url: seoConfig.privacyPolicy.canonical,
+        })}
+      />
       <PageBanner
         eyebrow="Legal"
         title="Privacy Policy"

@@ -19,6 +19,9 @@ import {
   LuUsers,
 } from 'react-icons/lu';
 import CTABanner from '../components/Layout/CTABanner';
+import SEO from '../components/Common/SEO';
+import { seoConfig } from '../config/seoConfig';
+import { generateServiceSchema, generateWebPageSchema } from '../utils/structuredData';
 import './Services.css';
 import './About.css';
 
@@ -192,6 +195,21 @@ const whyItems = [
 const Services = () => {
   return (
     <>
+      <SEO
+        {...seoConfig.services}
+        structuredData={[
+          generateWebPageSchema({
+            title: seoConfig.services.title,
+            description: seoConfig.services.description,
+            url: seoConfig.services.canonical,
+          }),
+          generateServiceSchema({
+            name: 'Healthcare Quality Consultancy',
+            description: seoConfig.services.description,
+            url: seoConfig.services.canonical,
+          }),
+        ]}
+      />
       {/* ═══════════════════════════════════════════════
           1. HERO / PAGE BANNER
       ════════════════════════════════════════════════ */}

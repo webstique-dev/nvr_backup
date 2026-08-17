@@ -13,7 +13,7 @@ const FOOTER_LINKS = {
     { label: 'Contact', to: '/contact' },
   ],
   Resources: [
-    // { label: 'FAQ', to: '/faq' },
+    { label: 'FAQ', to: '/faq' },
     { label: 'Privacy Policy', to: '/privacy-policy' },
     { label: 'Terms & Conditions', to: '/terms-conditions' },
   ],

@@ -18,6 +18,9 @@ import FAQAccordion from '../components/Common/FAQAccordion';
 import { faqs } from '../data/faqs';
 import Button from '../components/Common/Button';
 import CTABanner from '../components/Layout/CTABanner';
+import SEO from '../components/Common/SEO';
+import { seoConfig } from '../config/seoConfig';
+import { generateWebPageSchema } from '../utils/structuredData';
 import './About.css';
 
 /* ─── What We Do items ────────────────────────────────────── */
@@ -45,6 +48,14 @@ const consultancyItems = [
 const About = () => {
   return (
     <>
+      <SEO
+        {...seoConfig.about}
+        structuredData={generateWebPageSchema({
+          title: seoConfig.about.title,
+          description: seoConfig.about.description,
+          url: seoConfig.about.canonical,
+        })}
+      />
       {/* ═══════════════════════════════════════════════════════
           1. HERO SECTION
       ════════════════════════════════════════════════════════ */}

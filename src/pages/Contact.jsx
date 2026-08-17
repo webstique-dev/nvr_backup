@@ -14,6 +14,9 @@ import {
 import InquiryForm from '../components/Contact/InquiryForm';
 import FAQAccordion from '../components/Common/FAQAccordion';
 import SectionTitle from '../components/Common/SectionTitle';
+import SEO from '../components/Common/SEO';
+import { seoConfig } from '../config/seoConfig';
+import { generateWebPageSchema } from '../utils/structuredData';
 import './Contact.css';
 
 /* ─── Contact Info Items ────────────────────────────── */
@@ -93,6 +96,14 @@ const contactFaqs = [
 const Contact = () => {
   return (
     <>
+      <SEO
+        {...seoConfig.contact}
+        structuredData={generateWebPageSchema({
+          title: seoConfig.contact.title,
+          description: seoConfig.contact.description,
+          url: seoConfig.contact.canonical,
+        })}
+      />
       {/* ═══════════════════════════════════════════════
           1. HERO SECTION
       ════════════════════════════════════════════════ */}

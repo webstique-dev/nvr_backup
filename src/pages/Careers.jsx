@@ -19,6 +19,9 @@ import {
 import Button from '../components/Common/Button';
 import CTABanner from '../components/Layout/CTABanner';
 import SectionTitle from '../components/Common/SectionTitle';
+import SEO from '../components/Common/SEO';
+import { seoConfig } from '../config/seoConfig';
+import { generateWebPageSchema } from '../utils/structuredData';
 import './Careers.css';
 
 /* ─── Careers Benefits ──────────────────────────────── */
@@ -131,6 +134,14 @@ const Careers = () => {
 
   return (
     <>
+      <SEO
+        {...seoConfig.careers}
+        structuredData={generateWebPageSchema({
+          title: seoConfig.careers.title,
+          description: seoConfig.careers.description,
+          url: seoConfig.careers.canonical,
+        })}
+      />
       {/* ═══════════════════════════════════════════════
           1. HERO SECTION
       ════════════════════════════════════════════════ */}

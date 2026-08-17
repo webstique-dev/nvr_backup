@@ -1,10 +1,13 @@
 import { motion } from '../animations/motion';
 import Button from '../components/Common/Button';
+import SEO from '../components/Common/SEO';
 import './NotFound.css';
 
 const NotFound = () => {
   return (
-    <section className="not-found section--dark">
+    <>
+      <SEO title="Page Not Found | NVR Quality Solutions" description="The requested page could not be found." noindex />
+      <section className="not-found section--dark">
       <div className="container not-found__inner">
         <motion.span
           className="not-found__code"
@@ -39,6 +42,7 @@ const NotFound = () => {
         </motion.div>
       </div>
     </section>
+    </>
   );
 };
 

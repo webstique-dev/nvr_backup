@@ -6,12 +6,19 @@ import LearningSection from '../components/Home/LearningSection';
 import SectionTitle from '../components/Common/SectionTitle';
 import FAQAccordion from '../components/Common/FAQAccordion';
 import CTABanner from '../components/Layout/CTABanner';
+import SEO from '../components/Common/SEO';
+import { seoConfig } from '../config/seoConfig';
+import { generateOrganizationSchema, generateWebSiteSchema } from '../utils/structuredData';
 import { faqs } from '../data/faqs';
 import './Home.css';
 
 const Home = () => {
   return (
     <>
+      <SEO
+        {...seoConfig.home}
+        structuredData={[generateOrganizationSchema(), generateWebSiteSchema()]}
+      />
       {/* Hero Section */}
       <Hero />
 

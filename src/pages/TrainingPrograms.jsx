@@ -15,6 +15,9 @@ import {
   LuStethoscope,
 } from 'react-icons/lu';
 import CTABanner from '../components/Layout/CTABanner';
+import SEO from '../components/Common/SEO';
+import { seoConfig } from '../config/seoConfig';
+import { generateCourseSchema, generateWebPageSchema } from '../utils/structuredData';
 import './TrainingPrograms.css';
 
 /* ─── Training programs data ───────────────────────── */
@@ -237,6 +240,21 @@ const differentItems = [
 const TrainingPrograms = () => {
   return (
     <>
+      <SEO
+        {...seoConfig.trainings}
+        structuredData={[
+          generateWebPageSchema({
+            title: seoConfig.trainings.title,
+            description: seoConfig.trainings.description,
+            url: seoConfig.trainings.canonical,
+          }),
+          generateCourseSchema({
+            title: 'Healthcare Quality & Accreditation Training Programs',
+            description: seoConfig.trainings.description,
+            url: seoConfig.trainings.canonical,
+          }),
+        ]}
+      />
       {/* ═══════════════════════════════════════════════
           1. HERO SECTION
       ════════════════════════════════════════════════ */}

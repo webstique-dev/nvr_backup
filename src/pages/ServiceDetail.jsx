@@ -3,6 +3,9 @@ import PageBanner from '../components/Layout/PageBanner';
 import SectionTitle from '../components/Common/SectionTitle';
 import ContentPending from '../components/Common/ContentPending';
 import CTABanner from '../components/Layout/CTABanner';
+import SEO from '../components/Common/SEO';
+import { seoConfig } from '../config/seoConfig';
+import { generateServiceSchema, generateBreadcrumbSchema } from '../utils/structuredData';
 import { services } from '../data/services';
 
 const ServiceDetail = () => {
@@ -11,27 +14,50 @@ const ServiceDetail = () => {
 
   if (!service) {
     return (
-      <section className="section section--light">
-        <div className="container" style={{ paddingTop: 160, textAlign: 'center' }}>
-          <h1>Service not found</h1>
-          <p style={{ marginTop: 16 }}>
-            <Link to="/services">Back to Services</Link>
-          </p>
-        </div>
-      </section>
+      <>
+        <SEO title="Service Not Found | NVR Quality Solutions" noindex />
+        <section className="section section--light">
+          <div className="container" style={{ paddingTop: 160, textAlign: 'center' }}>
+            <h1>Service not found</h1>
+            <p style={{ marginTop: 16 }}>
+              <Link to="/services">Back to Services</Link>
+            </p>
+          </div>
+        </section>
+      </>
     );
   }
 
+  const detailSeo = seoConfig.serviceDetails?.[slug] || {
+    title: `${service.name} | Healthcare Quality Services | NVR Quality Solutions`,
+    description: `Learn about our ${service.name} consultancy and training services for healthcare organizations.`,
+    keywords: [service.name, 'Healthcare Quality Consultancy', 'Hospital Accreditation'],
+    canonical: `/services/${slug}`,
+  };
+
+  const breadcrumbItems = [
+    { label: 'Home', to: '/' },
+    { label: 'Services', to: '/services' },
+    { label: service.name },
+  ];
+
   return (
     <>
+      <SEO
+        {...detailSeo}
+        structuredData={[
+          generateServiceSchema({
+            name: service.name,
+            description: detailSeo.description,
+            url: detailSeo.canonical,
+          }),
+          generateBreadcrumbSchema(breadcrumbItems),
+        ]}
+      />
       <PageBanner
         eyebrow="Service"
         title={service.name}
-        breadcrumb={[
-          { label: 'Home', to: '/' },
-          { label: 'Services', to: '/services' },
-          { label: service.name },
-        ]}
+        breadcrumb={breadcrumbItems}
       />
 
       <section className="section section--light">

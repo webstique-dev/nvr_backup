@@ -1,11 +1,22 @@
 import PageBanner from '../components/Layout/PageBanner';
 import FAQAccordion from '../components/Common/FAQAccordion';
 import CTABanner from '../components/Layout/CTABanner';
+import SEO from '../components/Common/SEO';
+import { seoConfig } from '../config/seoConfig';
+import { generateWebPageSchema } from '../utils/structuredData';
 import { faqs } from '../data/faqs';
 
 const FAQ = () => {
   return (
     <>
+      <SEO
+        {...seoConfig.faq}
+        structuredData={generateWebPageSchema({
+          title: seoConfig.faq.title,
+          description: seoConfig.faq.description,
+          url: seoConfig.faq.canonical,
+        })}
+      />
       <PageBanner
         eyebrow="FAQ"
         title="Frequently Asked Questions"

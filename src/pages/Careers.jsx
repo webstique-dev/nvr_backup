@@ -174,7 +174,7 @@ const Careers = () => {
               We are passionate about elevating healthcare quality, patient safety, and accreditation standards. Build a rewarding career surrounded by industry practitioners and healthcare leaders.
             </motion.p>
 
-            <motion.div
+            {/* <motion.div
               className="car-hero__actions"
               variants={fadeUp}
               initial={shouldReduceMotion ? { opacity: 1, y: 0 } : 'hidden'}
@@ -187,7 +187,7 @@ const Careers = () => {
               <Button as="link" to="/contact" variant="secondary">
                 Get in Touch
               </Button>
-            </motion.div>
+            </motion.div> */}
           </div>
 
           {/* Visual (Right) */}

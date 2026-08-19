@@ -1,9 +1,12 @@
 /* ===========================
-   Learning Section
+   Learning Section — Redesigned
    =========================== */
 .learning {
   position: relative;
   overflow: hidden;
+  background-color: var(--color-canvas);
+  padding-top: clamp(3.5rem, 6.5vw, 6rem);
+  padding-bottom: clamp(3.5rem, 6.5vw, 6rem);
 }
 
 .learning__bg {
@@ -15,12 +18,12 @@
 
 .learning__glow {
   position: absolute;
-  top: 0;
-  left: -10%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(15, 63, 184, 0.07), transparent 70%);
-  filter: blur(80px);
+  top: 10%;
+  right: -10%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(15, 63, 184, 0.06), transparent 70%);
+  filter: blur(90px);
 }
 
 /* --- Layout --- */
@@ -29,7 +32,7 @@
   z-index: 1;
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: var(--spacing-xxl);
+  gap: clamp(2.5rem, 5vw, 4.5rem);
   align-items: center;
 }
 
@@ -41,87 +44,63 @@
 
 .learning__heading {
   font-family: var(--font-body);
-  font-size: var(--fs-h2-resp);
-  line-height: var(--lh-h2);
+  font-size: clamp(2.15rem, 3.8vw, 2.85rem);
+  line-height: 1.15;
   letter-spacing: var(--ls-h2);
   color: var(--color-primary-blue);
-  max-width: 20ch;
-  margin-top: var(--spacing-xs);
-  margin-bottom: var(--spacing-md);
+  margin-bottom: 1rem;
 }
 
 .learning__subheading {
   font-family: var(--font-body);
-  font-size: var(--fs-subtitle-resp);
-  font-weight: 500;
-  line-height: var(--lh-subtitle);
+  font-size: clamp(1.2rem, 2vw, 1.45rem);
+  font-weight: 600;
+  line-height: 1.35;
   letter-spacing: var(--ls-h2);
   color: var(--color-primary-red);
-  margin-bottom: var(--spacing-md);
+  margin-bottom: 1.5rem;
+}
+
+.learning__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .learning__paragraph {
   font-family: var(--font-body);
-  font-size: var(--fs-body-md);
+  font-size: clamp(1rem, 1.25vw, 1.125rem);
   color: var(--color-slate);
-  line-height: var(--lh-body-md);
-  letter-spacing: var(--ls-body);
-  max-width: 56ch;
-  margin-bottom: var(--spacing-md);
+  line-height: 1.75;
 }
 
-.learning__paragraph:last-of-type {
-  margin-bottom: 0;
+.learning__callout-box {
+  padding: 1.35rem 1.6rem;
+  background: linear-gradient(135deg, rgba(15, 63, 184, 0.05) 0%, rgba(15, 63, 184, 0.01) 100%);
+  border-left: 4px solid var(--color-primary-blue);
+  border-radius: 0 var(--rounded-md) var(--rounded-md) 0;
+  box-shadow: 0 4px 20px rgba(15, 63, 184, 0.03);
 }
 
-/* --- Stats Row --- */
-.learning__stats {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-lg);
-  margin-top: var(--spacing-xxl);
-  padding-top: var(--spacing-xl);
-  border-top: 1px solid var(--color-hairline-soft);
-}
-
-.learning__stat {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.learning__stat-value {
+.learning__callout-text {
   font-family: var(--font-body);
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
-  font-weight: 700;
-  color: var(--color-primary-blue);
-  line-height: var(--lh-hero);
-}
-
-.learning__stat-label {
-  font-family: var(--font-body);
-  font-size: var(--fs-micro-uc);
-  color: var(--color-slate);
-  line-height: var(--lh-body-sm);
-  text-transform: uppercase;
-  letter-spacing: var(--ls-micro-uc);
-}
-
-.learning__stat-divider {
-  width: 1px;
-  height: 48px;
-  background: var(--color-hairline-soft);
-  flex-shrink: 0;
+  font-size: clamp(0.98rem, 1.2vw, 1.08rem);
+  font-weight: 500;
+  color: var(--color-ink);
+  line-height: 1.68;
 }
 
 /* --- Visual (Right) --- */
 .learning__visual {
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .learning__img-wrap {
   position: relative;
-  padding-bottom: 16px;
+  width: 100%;
+  max-width: 500px;
 }
 
 .learning__img {
@@ -130,33 +109,17 @@
   border-radius: var(--rounded-lg);
   display: block;
   object-fit: contain;
-  filter: drop-shadow(0 20px 40px rgba(15, 63, 184, 0.15));
+  filter: drop-shadow(0 20px 40px rgba(15, 63, 184, 0.12));
+  position: relative;
+  z-index: 1;
 }
 
-.learning__img-tag {
+.learning__img-backdrop {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-  padding: 0.75rem 1rem;
-  border-radius: var(--rounded-lg);
-  font-family: var(--font-body);
-  font-size: var(--fs-caption-resp);
-  font-weight: 600;
-  color: var(--color-ink);
-  background: var(--color-canvas);
-  border: 1px solid var(--color-hairline-soft);
-  box-shadow: var(--shadow-2);
-  white-space: nowrap;
-}
-
-.learning__img-tag-icon {
-  width: 18px;
-  height: 18px;
-  color: var(--color-primary-blue);
-  flex-shrink: 0;
+  inset: -14px;
+  border-radius: calc(var(--rounded-lg) + 10px);
+  background: linear-gradient(135deg, rgba(15, 63, 184, 0.06), rgba(227, 27, 35, 0.04));
+  z-index: 0;
 }
 
 /* ===========================
@@ -165,25 +128,19 @@
 @media (max-width: 1024px) {
   .learning__inner {
     grid-template-columns: 1fr;
-    gap: var(--spacing-xl);
+    gap: 3rem;
   }
 
   .learning__visual {
     order: -1;
   }
 
-  .learning__img {
-    max-width: 460px;
-    margin: 0 auto;
-    display: block;
+  .learning__img-wrap {
+    max-width: 440px;
   }
 
   .learning__heading {
-    max-width: 28ch;
-  }
-
-  .learning__paragraph {
-    max-width: none;
+    font-size: clamp(1.85rem, 5vw, 2.5rem);
   }
 }
 
@@ -191,35 +148,34 @@
    Responsive — Mobile (≤640px)
    =========================== */
 @media (max-width: 640px) {
+  .learning {
+    padding-top: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+  }
+
   .learning__heading {
-    max-width: none;
-    font-size: clamp(1.75rem, 6vw, 2.5rem);
+    font-size: clamp(1.65rem, 7vw, 2.2rem);
+    margin-bottom: 0.85rem;
+  }
+
+  .learning__subheading {
+    font-size: clamp(1.1rem, 4.5vw, 1.3rem);
+    margin-bottom: 1.1rem;
   }
 
   .learning__paragraph {
-    font-size: var(--fs-body-md);
+    font-size: 0.98rem;
+    line-height: 1.65;
   }
 
-  .learning__stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-    gap: var(--spacing-md);
+  .learning__callout-box {
+    padding: 1.1rem 1.25rem;
+    border-left-width: 3px;
   }
 
-  .learning__stat-divider {
-    display: none;
-  }
-
-  .learning__img-tag {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    margin-top: 0.75rem;
-    font-size: var(--fs-caption-resp);
-    padding: 0.7rem 0.9rem;
-    white-space: nowrap;
-    width: fit-content;
-    max-width: 100%;
+  .learning__callout-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
 }
 
@@ -227,8 +183,15 @@
    2K / 4K
    =========================== */
 @media (min-width: 2000px) {
-  .learning__img {
-    max-width: 640px;
+  .learning__img-wrap {
+    max-width: 620px;
+  }
+
+  .learning__paragraph {
+    font-size: 1.25rem;
+  }
+
+  .learning__callout-text {
+    font-size: 1.2rem;
   }
 }
-

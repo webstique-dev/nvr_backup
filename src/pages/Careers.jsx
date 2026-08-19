@@ -72,19 +72,19 @@ const JOB_POSITIONS = [
   },
   {
     id: 'ipc-trainer',
-    title: 'Infection Prevention & Control Trainer (IPCN / IPCO)',
+    title: 'Infection Prevention & Control Trainer (IPCM / IPCO)',
     department: 'Training Programs',
     location: 'Amaravathi / On-Site',
     type: 'Full-Time / Part-Time',
     experience: '2-4+ Years Experience',
     summary:
-      'Deliver practical IPCN and IPCO training courses to nurses, doctors, and allied healthcare staff to strengthen infection surveillance and safety.',
+      'Deliver practical IPCM and IPCO training courses to nurses, doctors, and allied healthcare staff to strengthen infection surveillance and safety.',
     responsibilities: [
       'Conduct interactive training sessions on standard & transmission-based precautions.',
       'Evaluate clinical participant learning and practical demonstration.',
       'Update course materials in alignment with current infection control guidelines.',
     ],
-    tags: ['IPCN', 'IPCO', 'Infection Control', 'Training'],
+    tags: ['IPCM', 'IPCO', 'Infection Control', 'Training'],
   },
   {
     id: 'compliance-specialist',

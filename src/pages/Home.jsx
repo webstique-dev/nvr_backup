@@ -1,4 +1,5 @@
 import Hero from '../components/Home/Hero';
+import IntroBridge from '../components/Home/IntroBridge';
 import WhyChooseUs from '../components/Home/WhyChooseUs';
 import OurExpertise from '../components/Home/OurExpertise';
 import WhoWeWorkWith from '../components/Home/WhoWeWorkWith';
@@ -21,6 +22,9 @@ const Home = () => {
       />
       {/* Hero Section */}
       <Hero />
+
+      {/* Intro Bridge Section */}
+      <IntroBridge />
 
       {/* Why Choose NVR Quality Solutions */}
       <WhyChooseUs />

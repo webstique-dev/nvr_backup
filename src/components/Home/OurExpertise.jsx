@@ -61,8 +61,8 @@ const OurExpertise = () => {
           <motion.div className="expertise__header" variants={fadeUp}>
             <span className="eyebrow-light">Our Expertise</span>
             <h2 className="expertise__heading">
-              Comprehensive Training &amp;{' '}
-              <span className="expertise__heading-highlight">Consultancy Services</span>
+              Learn the Skills That{' '}
+              <span className="expertise__heading-highlight">Safer Healthcare Demands</span>
             </h2>
           </motion.div>
 
@@ -77,24 +77,24 @@ const OurExpertise = () => {
                   variants={fadeUp}
                   whileHover={shouldReduceMotion ? undefined : { y: -3, scale: 1.01 }}
                 >
-                <div className="expertise__card-header">
-                  <span className="expertise__card-number" aria-hidden="true">
-                    {card.number}
-                  </span>
-                  <span className="expertise__card-icon" aria-hidden="true">
-                    <Icon className="expertise__card-icon-svg" />
-                  </span>
-                </div>
-                <h3 className="expertise__card-title">{card.title}</h3>
-                <p className="expertise__card-description">{card.description}</p>
-                <div className="expertise__card-accent" aria-hidden="true" />
-              </motion.article>
-            );
-          })}
-        </div>
-      </motion.div>
-    </div>
-  </section>
+                  <div className="expertise__card-header">
+                    <span className="expertise__card-number" aria-hidden="true">
+                      {card.number}
+                    </span>
+                    <span className="expertise__card-icon" aria-hidden="true">
+                      <Icon className="expertise__card-icon-svg" />
+                    </span>
+                  </div>
+                  <h3 className="expertise__card-title">{card.title}</h3>
+                  <p className="expertise__card-description">{card.description}</p>
+                  <div className="expertise__card-accent" aria-hidden="true" />
+                </motion.article>
+              );
+            })}
+          </div>
+        </motion.div>
+      </div>
+    </section>
   );
 };
 

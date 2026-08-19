@@ -101,19 +101,20 @@ import './TrainingPrograms.css';
 
 const programs = [
   {
-    id: 'ipcn-training',
+    id: 'ipcm-training',
     icon: LuShieldCheck,
     tag: 'Infection Prevention',
     number: '01',
-    title: 'IPCN Training',
+    title: 'IPCM Training',
     description:
-      'Develop the knowledge and practical skills required to strengthen infection prevention and control practices across healthcare settings.',
+      'Gather practical knowledge of infection prevention and control practices essential for maintaining safe healthcare environments. The program helps participants understand infection risks, preventive measures, and the systems used to reduce healthcare associated infections.',
     areas: [
-      'Infection prevention principles',
-      'Standard and transmission-based precautions',
-      'Hand hygiene and infection prevention practices',
+      'Fundamentals of infection prevention and control',
+      'Infection risks and prevention strategies',
+      'Standard precautions and transmission-based precautions',
+      'Hand hygiene and personal protective equipment',
       'Healthcare-associated infection prevention',
-      'Infection surveillance and reporting',
+      'Infection control practices and monitoring',
     ],
   },
   {
@@ -123,39 +124,24 @@ const programs = [
     number: '02',
     title: 'IPCO Training',
     description:
-      'Build practical expertise in planning, implementing, monitoring, and improving infection prevention and control systems within healthcare organizations.',
+      'Understand infection prevention and control systems and their application across healthcare settings. The program focuses on strengthening infection control practices, monitoring compliance, and supporting a culture of safety within healthcare organizations.',
     areas: [
-      'Infection control systems',
-      'Infection surveillance',
-      'Policies and procedures',
-      'Monitoring and compliance',
-      'Infection control documentation',
-    ],
-  },
-  {
-    id: 'patient-safety-training',
-    icon: LuShieldCheck,
-    tag: 'Risk & Safety',
-    number: '03',
-    title: 'Patient Safety Training',
-    description:
-      'Explore the systems, processes, and practices that help reduce risk, improve patient outcomes, and create safer healthcare environments.',
-    areas: [
-      'Patient safety principles',
-      'Risk identification and prevention',
-      'Incident reporting',
-      'Root cause analysis',
-      'Safety culture',
+      'Infection prevention and control principles',
+      'Infection surveillance and monitoring',
+      'Infection control policies and procedures',
+      'Risk assessment and preventive measures',
+      'Compliance monitoring and improvement',
+      'Building a strong infection prevention and control culture',
     ],
   },
   {
     id: 'healthcare-quality-training',
     icon: LuChartBar,
     tag: 'Quality Practice',
-    number: '04',
+    number: '03',
     title: 'Healthcare Quality Training',
     description:
-      'Build a strong understanding of the principles, systems, and methodologies that drive continuous quality improvement in healthcare.',
+      'Build a strong understanding of the principles that drive quality in healthcare.',
     areas: [
       'Fundamentals of healthcare quality',
       'Quality management systems',
@@ -165,13 +151,29 @@ const programs = [
     ],
   },
   {
+    id: 'patient-safety-training',
+    icon: LuShieldCheck,
+    tag: 'Risk & Safety',
+    number: '04',
+    title: 'Patient Safety Training',
+    description:
+      'This program explores the systems, processes, and practices that help reduce risk, improve patient outcomes, and create safer healthcare environments.',
+    areas: [
+      'Patient safety principles',
+      'Risk identification and prevention',
+      'Incident reporting',
+      'Root cause analysis',
+      'Safety culture',
+    ],
+  },
+  {
     id: 'nabh-training',
     icon: LuMedal,
     tag: 'Accreditation',
     number: '05',
     title: 'NABH Training',
     description:
-      'Develop an understanding of the National Accreditation Board for Hospitals & Healthcare Providers (NABH) framework and its role in healthcare quality and accreditation.',
+      'Our NABH Training programs help participants understand NABH as a practical tool for organizing healthcare services, strengthening safety, and ensuring that important processes and responsibilities are not overlooked. The training is designed for healthcare professionals, students, and management teams who want to use NABH standards to build structured, consistent, and safer healthcare systems.',
     areas: [
       'NABH standards',
       'Quality documentation',
@@ -180,40 +182,6 @@ const programs = [
       'Accreditation preparedness',
     ],
   },
-
-  // {
-  //   id: 'jci-training',
-  //   icon: LuGlobe,
-  //   tag: 'Global Standards',
-  //   number: '06',
-  //   title: 'JCI Training',
-  //   description:
-  //     'Gain insights into internationally recognized healthcare quality and patient safety standards followed by leading healthcare institutions around the world.',
-  //   areas: [
-  //     'JCI standards',
-  //     'Patient-centered care',
-  //     'Performance improvement',
-  //     'Leadership and governance',
-  //     'Quality measurement',
-  //   ],
-  // },
-
-  // {
-  //   id: 'caam-hp-training',
-  //   icon: LuAward,
-  //   tag: 'Compliance',
-  //   number: '07',
-  //   title: 'CAAM HP Training',
-  //   description:
-  //     'Develop an understanding of CAAM HP standards and their role in strengthening healthcare quality, compliance, and patient safety.',
-  //   areas: [
-  //     'CAAM HP framework',
-  //     'Compliance requirements',
-  //     'Documentation practices',
-  //     'Process improvement',
-  //     'Quality implementation',
-  //   ],
-  // },
 ];
 
 /* ─── Who can join items ───────────────────────────── */
@@ -346,7 +314,7 @@ const TrainingPrograms = () => {
       {/* ═══════════════════════════════════════════════
           2. EXPLORE OUR TRAINING PROGRAMS
       ════════════════════════════════════════════════ */}
-      <section className="section section--light tp-programs">
+      <section className="section section--light tp-programs" id="tp-programs">
         <div className="container">
           <motion.div
             className="tp-section-header"
@@ -426,7 +394,7 @@ const TrainingPrograms = () => {
             <h2 className="tp-section-heading tp-section-heading--dark">Who Can Join?</h2>
             <p className="tp-section-intro--dark">
               Our training programs are suitable for students at different stages of their
-              professional journey, including:
+              professional journey, including
             </p>
           </motion.div>
 
@@ -528,40 +496,14 @@ const TrainingPrograms = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════
-          5. TAKE THE NEXT STEP
-      ════════════════════════════════════════════════ */}
-      <section className="section section--dark tp-nextstep">
-        <div className="tp-nextstep__bg" aria-hidden="true">
-          <div className="tp-nextstep__glow" />
-        </div>
-        <div className="container">
-          <motion.div
-            className="tp-nextstep__inner"
-            initial={{ opacity: 0, y: 28 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <span className="eyebrow">Next Steps</span>
-            <h2 className="tp-nextstep__heading">Take the Next Step</h2>
-            <p className="tp-nextstep__para">
-              Whether you're looking to strengthen your professional profile, transition into
-              healthcare quality, or gain accreditations, our training programs are ideal. We
-              provide the knowledge and confidence to help you move forward.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════
-          6. CTA BANNER
+          5. TAKE THE NEXT STEP (Single Unified Section)
       ════════════════════════════════════════════════ */}
       <CTABanner
-        eyebrow="Get Started"
-        title="Ready to Begin Your Healthcare Quality Journey?"
-        description=""
+        eyebrow="Next Steps"
+        title="Take the Next Step"
+        description="Whether you're looking to strengthen your professional profile, transition into healthcare quality, or gain accreditations, our training programs are ideal. We provide the knowledge and confidence to help you move forward."
         primaryLabel="View Upcoming Programs"
-        primaryTo="/training-programs"
+        primaryTo="#tp-programs"
         secondaryLabel="Get in Touch"
         secondaryTo="/contact"
       />

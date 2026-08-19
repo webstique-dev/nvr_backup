@@ -1,66 +1,32 @@
 import { motion, useReducedMotion, fadeUp, staggerContainer } from '../../animations/motion';
-import {
-  LuTarget,
-  LuGlobe,
-  LuBuilding2,
-  LuClipboardList,
-  LuTrophy,
-} from 'react-icons/lu';
 import './WhyChooseUs.css';
-
-const features = [
-  {
-    icon: LuTarget,
-    title: 'Consultancy-Led Training',
-    text: 'Our training is grounded in real healthcare consultancy experience — not generic content.',
-  },
-  {
-    icon: LuGlobe,
-    title: 'Globally Recognized Standards',
-    text: 'Programs aligned to NABH, JCI, and CAAM-HP frameworks accepted across international healthcare systems.',
-  },
-  {
-    icon: LuBuilding2,
-    title: 'Real-World Application',
-    text: 'Practical, case-based learning that bridges theory and on-the-ground implementation.',
-  },
-  {
-    icon: LuClipboardList,
-    title: 'Accreditation Support',
-    text: 'End-to-end guidance for organizations preparing for accreditation assessments.',
-  },
-];
 
 const WhyChooseUs = () => {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="why-choose section section--surface">
+    <section className="why-choose section section--surface" id="why-choose">
+      <div className="why-choose__bg" aria-hidden="true">
+        <div className="why-choose__glow" />
+      </div>
+
       <div className="container why-choose__inner">
-        {/* Left: Illustration */}
+        {/* Left: Visual Illustration */}
         <motion.div
           className="why-choose__visual"
-          initial={{ opacity: 0, x: -40 }}
+          initial={shouldReduceMotion ? { opacity: 1, x: 0 } : { opacity: 0, x: -36 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div className="why-choose__img-wrap">
+          <div className="why-choose__img-frame">
             <img
               src="/why-choose-illustration.png"
-              alt="Healthcare professional learning quality skills with digital tools and certifications"
+              alt="Healthcare professional applying quality standards and accreditation training"
               className="why-choose__img"
               loading="lazy"
             />
-            <div className="why-choose__img-badge">
-              <span className="why-choose__badge-icon-wrap" aria-hidden="true">
-                <LuTrophy className="why-choose__badge-icon" />
-              </span>
-              <div>
-                <strong>Expert-Led</strong>
-                <p>Industry practitioners teach every module</p>
-              </div>
-            </div>
+            <div className="why-choose__img-backdrop" aria-hidden="true" />
           </div>
         </motion.div>
 
@@ -73,36 +39,24 @@ const WhyChooseUs = () => {
           viewport={{ once: true, amount: 0.2 }}
         >
           <motion.span className="eyebrow-light" variants={fadeUp} custom={0}>
-            Why Choose NVR Quality Solutions
+            Why Choose Us
           </motion.span>
 
-          <motion.h2 className="why-choose__heading" variants={fadeUp} custom={0.1}>
-            Learn the Skills That{' '}
-            <span className="text-gradient-light">Safer Healthcare Demands</span>
+          <motion.h2 className="why-choose__heading" variants={fadeUp} custom={0.08}>
+            Why Choose <span className="text-gradient-light">NVR Quality Solutions?</span>
           </motion.h2>
 
-          <div className="why-choose__features">
-            {features.map((f, i) => {
-              const Icon = f.icon;
-              return (
-                <motion.div
-                  key={f.title}
-                  className="why-choose__feature"
-                  variants={fadeUp}
-                  custom={0.2 + i * 0.1}
-                  whileHover={shouldReduceMotion ? undefined : { y: -3, scale: 1.005 }}
-                >
-                  <div className="why-choose__feature-icon" aria-hidden="true">
-                    <Icon className="why-choose__feature-icon-svg" />
-                  </div>
-                  <div>
-                    <h3 className="why-choose__feature-title">{f.title}</h3>
-                    <p className="why-choose__feature-text">{f.text}</p>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
+          <motion.div className="why-choose__body" variants={fadeUp} custom={0.16}>
+            <p className="why-choose__lead">
+              Healthcare quality demands more than classroom learning. It requires practical understanding and industry insight. You should have the ability to apply standards in real healthcare environments. Our training programs are designed for you to develop quality improvement skills across hospitals and healthcare institutions.
+            </p>
+
+            <div className="why-choose__highlight-box">
+              <p className="why-choose__highlight-text">
+                With a strong foundation in <strong>Hospital Quality Management</strong>, <strong>Quality Improvement in Healthcare</strong>, and <strong>Healthcare Accreditation Training</strong>, we focus on building professionals who feel prepared.
+              </p>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

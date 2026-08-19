@@ -282,7 +282,7 @@ const Contact = () => {
               How Can We Help?
             </h2>
             <p className="cnt-form-sub">
-              Our team can assist you with:
+              Our team can assist you with
             </p>
           </motion.div>
 
@@ -311,84 +311,26 @@ const Contact = () => {
       {/* ═══════════════════════════════════════════════
           4. SEND US A MESSAGE
       ════════════════════════════════════════════════ */}
-      <section className="section section--light cnt-form-section">
+      <section className="section section--light cnt-form-section" id="send-message">
         <div className="container">
-          <div className="cnt-form-two-col">
-            {/* Main Form Column */}
-            <motion.div
-              className="cnt-form-col-main"
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <div className="cnt-form-header">
-                <span className="eyebrow-light">Send an Inquiry</span>
-                <h2 className="cnt-section-heading">Send Us a Message</h2>
-                <p className="cnt-form-sub">
-                  Complete the contact form, and a member of our team will get back to you as soon
-                  as possible.
-                </p>
-              </div>
+          <motion.div
+            className="cnt-form-container"
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <div className="cnt-form-header">
+              <h2 className="cnt-section-heading">Send Us a Message</h2>
+              <p className="cnt-form-sub">
+                Complete the contact form, and a member of our team will get back to you as soon as possible.
+              </p>
+            </div>
 
-              <div className="cnt-form-card">
-                <InquiryForm />
-              </div>
-            </motion.div>
-
-            {/* Supporting Side Panel */}
-            <motion.div
-              className="cnt-form-col-side"
-              initial={{ opacity: 0, x: 36 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
-            >
-              <div className="cnt-side-card">
-                <h3 className="cnt-side-card__title">Need Immediate Guidance?</h3>
-                <p className="cnt-side-card__desc">
-                  Whether you are inquiring about NABH, JCI, or CAAM-HP training, course enrollment, or hospital consultancy services, our team is ready to assist you.
-                </p>
-
-                <div className="cnt-side-features">
-                  <div className="cnt-side-feature">
-                    <div className="cnt-side-feature__icon-wrap" aria-hidden="true">
-                      <LuClock className="cnt-side-feature__icon" />
-                    </div>
-                    <div>
-                      <strong>Prompt Response</strong>
-                      <p>9:00 AM – 9:00 PM (7 Days a Week)</p>
-                    </div>
-                  </div>
-
-                  <div className="cnt-side-feature">
-                    <div className="cnt-side-feature__icon-wrap" aria-hidden="true">
-                      <LuShieldCheck className="cnt-side-feature__icon" />
-                    </div>
-                    <div>
-                      <strong>Expert Direct Guidance</strong>
-                      <p>Connect with quality consultants</p>
-                    </div>
-                  </div>
-
-                  <div className="cnt-side-feature">
-                    <div className="cnt-side-feature__icon-wrap" aria-hidden="true">
-                      <LuHeadphones className="cnt-side-feature__icon" />
-                    </div>
-                    <div>
-                      <strong>Tailored Support</strong>
-                      <p>Custom training for institutions</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="cnt-side-badge">
-                  <span className="cnt-side-badge__dot" aria-hidden="true" />
-                  <span>Healthcare Quality &amp; Accreditation Consultancy</span>
-                </div>
-              </div>
-            </motion.div>
-          </div>
+            <div className="cnt-form-card">
+              <InquiryForm />
+            </div>
+          </motion.div>
         </div>
       </section>
 

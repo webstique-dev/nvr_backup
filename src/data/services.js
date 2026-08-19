@@ -1,5 +1,5 @@
 export const services = [
-  { slug: 'ipcn-training', name: 'IPCN Training' },
+  { slug: 'ipcm-training', name: 'IPCM Training' },
   { slug: 'ipco-training', name: 'IPCO Training' },
   { slug: 'patient-safety-training', name: 'Patient Safety Training' },
   { slug: 'healthcare-quality-training', name: 'Healthcare Quality Training' },

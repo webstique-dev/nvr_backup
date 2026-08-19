@@ -29,7 +29,7 @@ export const seoConfig = {
   trainings: {
     title: 'Healthcare Quality & Patient Safety Training Programs | NVR Quality Solutions',
     description:
-      'Explore structured Healthcare Quality Training, IPCN Training, IPCO Training, Patient Safety Training, and NABH / JCI / CAAM-HP accreditation preparedness courses.',
+      'Explore structured Healthcare Quality Training, IPCM Training, IPCO Training, Patient Safety Training, and NABH / JCI / CAAM-HP accreditation preparedness courses.',
     keywords: [
       'Healthcare Quality Training',
       'Patient Safety Training',
@@ -37,7 +37,7 @@ export const seoConfig = {
       'JCI Training',
       'Healthcare Quality Courses',
       'Quality Management Training',
-      'IPCN Training',
+      'IPCM Training',
       'IPCO Training',
       'CAAM-HP Training',
     ],
@@ -45,18 +45,18 @@ export const seoConfig = {
   },
 
   trainingDetails: {
-    'ipcn-training': {
-      title: 'IPCN Training | Infection Prevention & Control Nurse | NVR Quality Solutions',
+    'ipcm-training': {
+      title: 'IPCM Training | Infection Prevention & Control Module | NVR Quality Solutions',
       description:
-        'Develop practical skills in infection surveillance, standard precautions, hand hygiene, and healthcare-associated infection prevention with our IPCN Training program.',
+        'Gather practical knowledge of infection prevention and control practices essential for maintaining safe healthcare environments with our IPCM Training program.',
       keywords: [
-        'IPCN Training',
-        'Infection Prevention and Control Nurse',
+        'IPCM Training',
+        'Infection Prevention and Control Module',
         'Infection Control Training',
         'Healthcare Quality Training',
         'Patient Safety Training',
       ],
-      canonical: '/training-programs/ipcn-training',
+      canonical: '/training-programs/ipcm-training',
     },
     'ipco-training': {
       title: 'IPCO Training | Infection Prevention & Control Officer | NVR Quality Solutions',

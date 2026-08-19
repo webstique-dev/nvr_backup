@@ -170,76 +170,54 @@ const whatWeDoItems = [
 // ];
 
 const trainingServices = [
-  // {
-  //   id: 'ipcn-training',
-  //   slug: 'ipcn-training',
-  //   icon: LuShieldCheck,
-  //   number: '00',
-  //   title: 'IPCN Training',
-  //   body: [
-  //     'Our IPCN Training programs equip healthcare professionals with the knowledge and practical skills required to strengthen infection prevention and control practices across healthcare settings.',
-  //   ],
-  // },
-  // {
-  //   id: 'ipco-training',
-  //   slug: 'ipco-training',
-  //   icon: LuShieldCheck,
-  //   number: '00',
-  //   title: 'IPCO Training',
-  //   body: [
-  //     'Our IPCO Training programs focus on developing practical expertise in planning, implementing, monitoring, and improving infection prevention and control systems within healthcare organizations.',
-  //   ],
-  // },
+  {
+    id: 'ipcm-training',
+    slug: 'ipcm-training',
+    icon: LuShieldCheck,
+    number: '01',
+    title: 'IPCM Training',
+    body: [
+      'Gather practical knowledge of infection prevention and control practices essential for maintaining safe healthcare environments. The program helps participants understand infection risks, preventive measures, and the systems used to reduce healthcare associated infections.',
+    ],
+  },
+  {
+    id: 'ipco-training',
+    slug: 'ipco-training',
+    icon: LuShieldCheck,
+    number: '02',
+    title: 'IPCO Training',
+    body: [
+      'Understand infection prevention and control systems and their application across healthcare settings. The program focuses on strengthening infection control practices, monitoring compliance, and supporting a culture of safety within healthcare organizations.',
+    ],
+  },
   {
     id: 'healthcare-quality-training',
     slug: 'healthcare-quality-training',
     icon: LuChartBar,
-    number: '01',
+    number: '03',
     title: 'Healthcare Quality Training',
     body: [
-      'Our Healthcare Quality Training programs equip students and healthcare professionals. Every student leaves us with the knowledge and skills needed to understand healthcare quality systems, regulatory expectations, and quality improvement methodologies.',
-      'Participants gain exposure to industry best practices, documentation processes, quality frameworks, and implementation strategies. They can then contribute confidently to quality initiatives within hospitals and healthcare institutions.',
+      'Build a strong understanding of the principles that drive quality in healthcare.',
     ],
   },
   {
     id: 'patient-safety-training',
     slug: 'patient-safety-training',
     icon: LuShieldCheck,
-    number: '02',
+    number: '04',
     title: 'Patient Safety Training',
     body: [
-      'Our Patient Safety Training programs focus on developing a culture of safety by helping participants understand risk management. They also learn incident reporting, quality improvement, and preventive strategies that improve outcomes.',
+      'This program explores the systems, processes, and practices that help reduce risk, improve patient outcomes, and create safer healthcare environments.',
     ],
   },
-
   {
     id: 'nabh-training',
     slug: 'nabh-training',
     icon: LuMedal,
-    number: '03',
+    number: '05',
     title: 'NABH Training',
     body: [
-      'Our NABH Training programs explore the principles, documentation requirements, quality indicators, and implementation processes associated with the National Accreditation Board for Hospitals & Healthcare Providers (NABH).',
-    ],
-  },
-  {
-    id: 'jci-training',
-    slug: 'jci-training',
-    icon: LuGlobe,
-    number: '04',
-    title: 'JCI Training',
-    body: [
-      'Our JCI Training programs introduce participants to internationally recognized healthcare quality and patient safety standards. Training includes quality management principles, patient-centered standards, documentation, and implementation practices that support organizational excellence.',
-    ],
-  },
-  {
-    id: 'caam-hp-training',
-    slug: 'caam-hp-training',
-    icon: LuAward,
-    number: '05',
-    title: 'CAAM-HP Training',
-    body: [
-      'Our CAAM-HP Training programs dissect the framework, requirements, and quality principles associated with CAAM-HP standards. The curriculum is designed to improve awareness and prepare participants for quality-focused roles.',
+      'Our NABH Training programs help participants understand NABH as a practical tool for organizing healthcare services, strengthening safety, and ensuring that important processes and responsibilities are not overlooked. The training is designed for healthcare professionals, students, and management teams who want to use NABH standards to build structured, consistent, and safer healthcare systems.',
     ],
   },
 ];
@@ -485,93 +463,75 @@ const Services = () => {
       {/* ═══════════════════════════════════════════════
           3. ACCREDITATION CONSULTANCY
       ════════════════════════════════════════════════ */}
-      <section className="section section--dark svc-consult">
+      <section className="section section--surface svc-consult" id="accreditation-consultancy">
         <div className="svc-consult__bg" aria-hidden="true">
           <div className="svc-consult__glow" />
         </div>
-        <div className="container">
+        <div className="container svc-consult__inner">
+          {/* Left: Content */}
           <motion.div
-            className="svc-section-header svc-section-header--dark"
+            className="svc-consult__content"
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
           >
-            <span className="eyebrow">Consultancy</span>
-            <h2 className="svc-section-heading svc-section-heading--dark">
-              Healthcare Accreditation Consultancy
+            <span className="eyebrow-light">Consultancy</span>
+            <h2 className="svc-consult__heading">
+              Healthcare Accreditation <span className="text-gradient-light">Consultancy</span>
             </h2>
-          </motion.div>
 
-          <div className="svc-consult__inner">
-            {/* Intro text */}
-            <motion.div
-              className="svc-consult__text"
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1], delay: 0.08 }}
-            >
-              <p className="svc-consult__intro">
-                Preparing for accreditation requires a well-designed quality management system
-                supported by effective implementation. Our Healthcare Accreditation Training and
-                consultancy services help healthcare organizations:
-              </p>
+            <p className="svc-consult__intro">
+              Preparing for accreditation requires a well-designed quality management system
+              supported by effective implementation. Our Healthcare Accreditation Training and
+              consultancy services help healthcare organizations:
+            </p>
 
-              <div className="svc-consult__checklist">
-                {consultancyItems.map((item, i) => (
-                  <motion.div
-                    key={item.id}
-                    id={`consult-${item.id}`}
-                    className="svc-consult__check-item"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: i * 0.08 }}
-                  >
-                    <div className="svc-consult__check-icon-wrap" aria-hidden="true">
-                      <LuCheck className="svc-consult__check-icon" />
-                    </div>
-                    <span className="svc-consult__check-label">{item.label}</span>
-                  </motion.div>
-                ))}
-              </div>
+            <div className="svc-consult__checklist">
+              {consultancyItems.map((item, i) => (
+                <motion.div
+                  key={item.id}
+                  id={`consult-${item.id}`}
+                  className="svc-consult__check-item"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: i * 0.06 }}
+                >
+                  <div className="svc-consult__check-icon-wrap" aria-hidden="true">
+                    <LuCheck className="svc-consult__check-icon" />
+                  </div>
+                  <span className="svc-consult__check-label">{item.label}</span>
+                </motion.div>
+              ))}
+            </div>
 
-              <motion.p
-                className="svc-consult__closing"
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.4 }}
-                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-              >
+            <div className="svc-consult__callout-box">
+              <p className="svc-consult__callout-text">
                 Our consultants work alongside healthcare teams to strengthen organizational
                 readiness.
-              </motion.p>
-            </motion.div>
-
-            {/* Consultancy card panel */}
-            <motion.div
-              className="svc-consult__panel glass"
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
-            >
-              <div className="svc-consult__panel-icon-wrap" aria-hidden="true">
-                <LuBriefcase className="svc-consult__panel-icon" />
-              </div>
-              <h3 className="svc-consult__panel-title">Expert Consultancy</h3>
-              <p className="svc-consult__panel-desc">
-                Our team of experienced Healthcare Quality Consultants provides structured,
-                end-to-end support for accreditation preparation and quality system development.
               </p>
-              <div className="svc-consult__panel-tags">
-                <span className="svc-consult__tag">NABH</span>
-                <span className="svc-consult__tag">JCI</span>
-                <span className="svc-consult__tag">CAAM-HP</span>
-              </div>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
+
+          {/* Right: Visual Illustration */}
+          <motion.div
+            className="svc-consult__visual"
+            initial={{ opacity: 0, x: 36 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
+          >
+            <div className="svc-consult__img-frame">
+              <img
+                src="/services-hero-illustration.png"
+                alt="Healthcare Accreditation Consultancy"
+                className="svc-consult__img"
+                loading="lazy"
+              />
+              <div className="svc-consult__img-backdrop" aria-hidden="true" />
+            </div>
+          </motion.div>
         </div>
       </section>
 

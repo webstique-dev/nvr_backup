@@ -123,7 +123,8 @@ const About = () => {
               viewport={{ once: true, amount: 0.2 }}
               custom={0.36}
             >
-              Our approach combines practical learning with real-world implementation, while recognizing that every healthcare organization operates with different skill sets, geographic considerations, and resource limitations. Our tailored solutions are designed to work within these constraints, enabling organizations to implement practical, sustainable, and effective quality improvements.
+              Our tailor made approach combines practical learning with real-world implementation as per your budget, skill sets, location, and resource restrictions. This way, our participants understand not only what quality standards require, but also how they are successfully applied within environments.
+
             </motion.p>
 
 
@@ -192,7 +193,8 @@ const About = () => {
               <span className="about-mv-card__eyebrow">Vision</span>
               <h2 className="about-mv-card__title">Our Vision</h2>
               <p className="about-mv-card__body">
-                To be a trusted partner in advancing and implementing healthcare quality standards by training professionals and healthcare organizations to build sustainable quality systems.
+                To be a trusted partner in advancing and implementing healthcare quality by training professionals and healthcare organizations to build sustainable quality systems.
+
               </p>
             </motion.div>
           </div>
@@ -309,7 +311,7 @@ const About = () => {
       {/* ═══════════════════════════════════════════════════════
           5. WHY CHOOSE NVR
       ════════════════════════════════════════════════════════ */}
-      <section className="section section--dark about-why">
+      <section className="section section--surface about-why" id="why-choose-nvr">
         <div className="about-why__bg" aria-hidden="true">
           <div className="about-why__glow" />
         </div>
@@ -317,13 +319,13 @@ const About = () => {
           {/* Left: Content */}
           <div className="about-why__content">
             <motion.span
-              className="eyebrow"
+              className="eyebrow-light"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             >
-              Why Choose Us
+              Why Choose NVR Quality Solutions
             </motion.span>
 
             <motion.h2
@@ -331,43 +333,47 @@ const About = () => {
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
-              transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+              transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1], delay: 0.08 }}
             >
               Why Choose{' '}
-              <span className="text-gradient">NVR Quality Solutions?</span>
+              <span className="text-gradient-light">NVR Quality Solutions?</span>
             </motion.h2>
 
-            <motion.p
-              className="about-why__para"
+            <motion.div
+              className="about-why__body"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
-              transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+              transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1], delay: 0.16 }}
             >
-              Choosing the right training partner can make a big difference in your professional
-              journey. We are committed to helping learners develop the confidence and knowledge
-              needed to make a positive impact.
-            </motion.p>
+              <p className="about-why__lead">
+                Choosing the right training partner can make a big difference in your professional
+                journey. We are committed to helping learners develop the confidence and knowledge
+                needed to make a positive impact.
+              </p>
 
-            <motion.p
-              className="about-why__para"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.4 }}
-              transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1], delay: 0.28 }}
-            >
-              Whether you are taking your first step into healthcare quality or strengthening an
-              existing quality program, we are here to support you.
-            </motion.p>
+              <div className="about-why__highlight-box">
+                <p className="about-why__highlight-text">
+                  Whether you are taking your first step into healthcare quality or strengthening an
+                  existing quality program, we are here to support you.
+                </p>
+              </div>
+
+              <div className="about-why__actions">
+                <Button as="link" to="/training-programs" variant="primary">
+                  Explore Our Training Programs
+                </Button>
+              </div>
+            </motion.div>
           </div>
 
-          {/* Right: Illustration */}
+          {/* Right: Visual Illustration */}
           <motion.div
             className="about-why__visual"
-            initial={{ opacity: 0, x: 44 }}
+            initial={{ opacity: 0, x: 36 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
           >
             <div className="about-why__img-frame">
               <img
@@ -376,6 +382,7 @@ const About = () => {
                 className="about-why__img"
                 loading="lazy"
               />
+              <div className="about-why__img-backdrop" aria-hidden="true" />
             </div>
           </motion.div>
         </div>

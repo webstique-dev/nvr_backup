@@ -118,9 +118,9 @@
 }
 
 .hero__trust-logo {
-  height: 70px;
+  height: 48px;
   width: auto;
-  max-width: 210px;
+  max-width: 150px;
   object-fit: contain;
   display: block;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.04));
@@ -149,7 +149,7 @@
 
 .hero__trust-divider {
   width: 1px;
-  height: 52px;
+  height: 38px;
   background-color: var(--color-hairline-soft);
   flex-shrink: 0;
   opacity: 0.8;
@@ -289,8 +289,8 @@
   }
 
   .hero__trust-logo {
-    height: 52px;
-    max-width: 160px;
+    height: 40px;
+    max-width: 130px;
   }
 
   .hero__illustration {
@@ -342,8 +342,8 @@
   }
 
   .hero__trust-logo {
-    height: 44px;
-    max-width: 130px;
+    height: 32px;
+    max-width: 100px;
   }
 }
 

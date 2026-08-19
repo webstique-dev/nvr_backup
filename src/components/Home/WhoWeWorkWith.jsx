@@ -59,8 +59,8 @@ const WhoWeWorkWith = () => {
           <motion.div className="who-work__header" variants={fadeUp}>
             <span className="eyebrow-light">Who We Work With</span>
             <h2 className="who-work__heading">
-              Programs Designed for{' '}
-              <span className="text-gradient-light">Every Healthcare Role</span>
+              Our programs are {' '}
+              <span className="text-gradient-light">designed for</span>
             </h2>
           </motion.div>
 

@@ -78,7 +78,7 @@ const WhyChooseUs = () => {
 
           <motion.h2 className="why-choose__heading" variants={fadeUp} custom={0.1}>
             Learn the Skills That{' '}
-            <span className="text-gradient-light">Modern Healthcare Demands</span>
+            <span className="text-gradient-light">Safer Healthcare Demands</span>
           </motion.h2>
 
           <div className="why-choose__features">

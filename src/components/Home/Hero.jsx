@@ -58,7 +58,7 @@ const Hero = () => {
             custom={0.28}
           >
             <Button as="link" to="/training-programs" variant="primary">
-              Explore Training Programs
+              Explore Trainings
             </Button>
             <Button as="link" to="/contact" variant="secondary">
               Talk to Our Experts
@@ -74,18 +74,35 @@ const Hero = () => {
             custom={0.36}
           >
             <div className="hero__trust-item">
-              <span className="hero__trust-value">NABH</span>
-              <span className="hero__trust-label">Services</span>
+              {/* Replace the src paths with the actual locations of your image files */}
+              <img
+                src="https://res.cloudinary.com/rlokioxu/image/upload/v1787050320/NABH_logo_eswfaz.png"
+                alt="NABH Accreditation Logo"
+                className="hero__trust-logo"
+              />
+              {/* <span className="hero__trust-label">Services</span> */}
             </div>
+
             <div className="hero__trust-divider" aria-hidden="true" />
+
             <div className="hero__trust-item">
-              <span className="hero__trust-value">JCI</span>
-              <span className="hero__trust-label">Services</span>
+              <img
+                src="https://res.cloudinary.com/rlokioxu/image/upload/v1787049467/jci-logo_a9m6ad.svg"
+                alt="JCI Accreditation Logo"
+                className="hero__trust-logo"
+              />
+              {/* <span className="hero__trust-label">Services</span> */}
             </div>
+
             <div className="hero__trust-divider" aria-hidden="true" />
+
             <div className="hero__trust-item">
-              <span className="hero__trust-value">CAAM-HP</span>
-              <span className="hero__trust-label">Services</span>
+              <img
+                src="https://res.cloudinary.com/rlokioxu/image/upload/v1787050320/Caam-hp-logo_c8qkmc.png"
+                alt="CAAM-HP Accreditation Logo"
+                className="hero__trust-logo"
+              />
+              {/* <span className="hero__trust-label">Services</span> */}
             </div>
           </motion.div>
         </div>

@@ -59,13 +59,13 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="footer__brand">
             <Link to="/" className="footer__logo" aria-label="NVR Quality Solutions Home">
-              <img src="/nvr-logo.png" alt="NVR Quality Solutions" className="footer__logo-img" />
+              <img src="/nvr-logo.png" alt="NVR Quality Solutions" className="footer__logo-img" width="160" height="48" decoding="async" />
             </Link>
             <p className="footer__tagline">
               Empowering Healthcare Organizations to build safer, higher-quality
               healthcare systems through expert-led training and quality consultancy.
             </p>
-            <Link to="/contact" className="footer__cta">
+            <Link to="/contact#send-message" className="footer__cta">
               <span>Start an inquiry</span>
               <FiArrowUpRight className="footer__cta-icon" aria-hidden="true" />
             </Link>

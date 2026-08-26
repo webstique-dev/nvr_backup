@@ -15,6 +15,7 @@ import {
   LuStethoscope,
 } from 'react-icons/lu';
 import CTABanner from '../components/Layout/CTABanner';
+import OptimizedImage from '../components/Common/OptimizedImage';
 import SEO from '../components/Common/SEO';
 import { seoConfig } from '../config/seoConfig';
 import { generateCourseSchema, generateWebPageSchema } from '../utils/structuredData';
@@ -296,16 +297,20 @@ const TrainingPrograms = () => {
             transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1], delay: 0.18 }}
           >
             <div className="tp-hero__img-frame">
-              <img
-                src="/training-hero-illustration.png"
+              <OptimizedImage
+                src="https://res.cloudinary.com/rlokioxu/image/upload/v1787754200/TrainingBanner_t7jpcb.png"
                 alt="Healthcare quality training programs with industry experts"
                 className="tp-hero__img"
-                loading="eager"
+                priority={true}
+                widths={[400, 600, 800, 1200]}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 500px, 520px"
+                width={520}
+                height={420}
               />
-              <div className="tp-hero__img-tag glass">
+              {/* <div className="tp-hero__img-tag glass">
                 <LuCircleCheckBig className="tp-hero__tag-icon" aria-hidden="true" />
                 <span>Job-Ready Training</span>
-              </div>
+              </div> */}
             </div>
           </motion.div>
         </div>
@@ -505,7 +510,7 @@ const TrainingPrograms = () => {
         primaryLabel="View Upcoming Programs"
         primaryTo="#tp-programs"
         secondaryLabel="Get in Touch"
-        secondaryTo="/contact"
+        secondaryTo="/contact#send-message"
       />
     </>
   );

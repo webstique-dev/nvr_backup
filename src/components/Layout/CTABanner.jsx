@@ -7,7 +7,7 @@ const CTABanner = ({
   title,
   description,
   primaryLabel = 'Contact Us',
-  primaryTo = '/contact',
+  primaryTo = '/contact#send-message',
   secondaryLabel,
   secondaryTo,
 }) => {

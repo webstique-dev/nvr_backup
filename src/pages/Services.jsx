@@ -19,6 +19,7 @@ import {
   LuUsers,
 } from 'react-icons/lu';
 import CTABanner from '../components/Layout/CTABanner';
+import OptimizedImage from '../components/Common/OptimizedImage';
 import SEO from '../components/Common/SEO';
 import { seoConfig } from '../config/seoConfig';
 import { generateServiceSchema, generateWebPageSchema } from '../utils/structuredData';
@@ -333,16 +334,20 @@ const Services = () => {
             transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1], delay: 0.18 }}
           >
             <div className="svc-hero__img-frame">
-              <img
-                src="/services-hero-illustration.png"
+              <OptimizedImage
+                src="https://res.cloudinary.com/rlokioxu/image/upload/v1787754199/ServicesBanner_tzghzg.png"
                 alt="Healthcare quality training and consultancy services overview"
                 className="svc-hero__img"
-                loading="eager"
+                priority={true}
+                widths={[400, 600, 800, 1200]}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 500px, 520px"
+                width={520}
+                height={420}
               />
-              <div className="svc-hero__img-tag glass">
+              {/* <div className="svc-hero__img-tag glass">
                 <LuCircleCheckBig className="svc-hero__tag-icon" aria-hidden="true" />
                 <span>Accreditation Ready</span>
-              </div>
+              </div> */}
             </div>
           </motion.div>
         </div>
@@ -523,13 +528,16 @@ const Services = () => {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
           >
             <div className="svc-consult__img-frame">
-              <img
-                src="/services-hero-illustration.png"
+              <OptimizedImage
+                src="https://res.cloudinary.com/rlokioxu/image/upload/v1787754198/Services2_ygqss7.png"
                 alt="Healthcare Accreditation Consultancy"
                 className="svc-consult__img"
-                loading="lazy"
+                priority={false}
+                widths={[400, 600, 800, 1000]}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 440px, 500px"
+                width={500}
+                height={400}
               />
-              <div className="svc-consult__img-backdrop" aria-hidden="true" />
             </div>
           </motion.div>
         </div>
@@ -601,7 +609,7 @@ const Services = () => {
         primaryLabel="Explore Our Training Programs"
         primaryTo="/training-programs"
         secondaryLabel="Contact Our Team"
-        secondaryTo="/contact"
+        secondaryTo="/contact#send-message"
       />
     </>
   );

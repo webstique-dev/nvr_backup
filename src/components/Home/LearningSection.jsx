@@ -1,4 +1,5 @@
 import { motion, useReducedMotion, fadeUp, staggerContainer } from '../../animations/motion';
+import OptimizedImage from '../Common/OptimizedImage';
 import './LearningSection.css';
 
 const LearningSection = () => {
@@ -57,13 +58,16 @@ const LearningSection = () => {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
         >
           <div className="learning__img-wrap">
-            <img
-              src="/learning-illustration.png"
+            <OptimizedImage
+              src="https://res.cloudinary.com/rlokioxu/image/upload/v1787754198/Home3_lgp63t.png"
               alt="Healthcare quality education — professionals mastering quality standards and patient safety"
               className="learning__img"
-              loading="lazy"
+              priority={false}
+              widths={[400, 600, 800, 1000]}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 440px, 500px"
+              width={500}
+              height={400}
             />
-            <div className="learning__img-backdrop" aria-hidden="true" />
           </div>
         </motion.div>
       </div>

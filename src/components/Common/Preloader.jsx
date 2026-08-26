@@ -123,6 +123,9 @@ export default function Preloader({ onFinish }) {
               src="/nvr-logo.png"
               alt="NVR Quality Solutions Logo"
               className="nvr-preloader__logo"
+              width="240"
+              height="72"
+              decoding="async"
             />
             <div className="nvr-preloader__logo-shimmer" />
           </div>

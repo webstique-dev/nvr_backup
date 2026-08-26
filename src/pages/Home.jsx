@@ -46,7 +46,7 @@ const Home = () => {
         primaryLabel="View Training Programs"
         primaryTo="/training-programs"
         secondaryLabel="Contact Us"
-        secondaryTo="/contact"
+        secondaryTo="/contact#send-message"
       />
 
       {/* FAQ Section — Modern Accordion */}

@@ -1,4 +1,5 @@
 import { motion, useReducedMotion, fadeUp, staggerContainer } from '../../animations/motion';
+import OptimizedImage from '../Common/OptimizedImage';
 import './WhyChooseUs.css';
 
 const WhyChooseUs = () => {
@@ -20,13 +21,16 @@ const WhyChooseUs = () => {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
           <div className="why-choose__img-frame">
-            <img
-              src="/why-choose-illustration.png"
+            <OptimizedImage
+              src="https://res.cloudinary.com/rlokioxu/image/upload/v1787754198/Home2_wzbn1i.png"
               alt="Healthcare professional applying quality standards and accreditation training"
               className="why-choose__img"
-              loading="lazy"
+              priority={false}
+              widths={[400, 600, 800, 1000]}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 440px, 500px"
+              width={500}
+              height={400}
             />
-            <div className="why-choose__img-backdrop" aria-hidden="true" />
           </div>
         </motion.div>
 

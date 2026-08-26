@@ -19,6 +19,7 @@ import {
 import Button from '../components/Common/Button';
 import CTABanner from '../components/Layout/CTABanner';
 import SectionTitle from '../components/Common/SectionTitle';
+import OptimizedImage from '../components/Common/OptimizedImage';
 import SEO from '../components/Common/SEO';
 import { seoConfig } from '../config/seoConfig';
 import { generateWebPageSchema } from '../utils/structuredData';
@@ -209,16 +210,20 @@ const Careers = () => {
             transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1], delay: 0.18 }}
           >
             <div className="car-hero__img-frame">
-              <img
-                src="/why-choose-illustration.png"
+              <OptimizedImage
+                src="https://res.cloudinary.com/rlokioxu/image/upload/v1787754197/CareersBanner_kr325u.png"
                 alt="Healthcare quality professionals collaborating on training and accreditation"
                 className="car-hero__img"
-                loading="eager"
+                priority={true}
+                widths={[400, 600, 800, 1200]}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 500px, 520px"
+                width={520}
+                height={420}
               />
-              <div className="car-hero__img-tag glass">
+              {/* <div className="car-hero__img-tag glass">
                 <LuShieldCheck className="car-hero__tag-icon" aria-hidden="true" />
                 <span>Empowering Healthcare Leaders</span>
-              </div>
+              </div> */}
             </div>
           </motion.div>
         </div>
@@ -338,7 +343,7 @@ const Careers = () => {
         primaryLabel="Email Your CV"
         primaryTo="mailto:nvrqualitysolutions@gmail.com?subject=Career%20Inquiry%20-%20NVR%20Quality%20Solutions"
         secondaryLabel="Contact Us"
-        secondaryTo="/contact"
+        secondaryTo="/contact#send-message"
       />
 
       {/* ═══════════════════════════════════════════════

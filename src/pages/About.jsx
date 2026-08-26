@@ -18,6 +18,7 @@ import FAQAccordion from '../components/Common/FAQAccordion';
 import { faqs } from '../data/faqs';
 import Button from '../components/Common/Button';
 import CTABanner from '../components/Layout/CTABanner';
+import OptimizedImage from '../components/Common/OptimizedImage';
 import SEO from '../components/Common/SEO';
 import { seoConfig } from '../config/seoConfig';
 import { generateWebPageSchema } from '../utils/structuredData';
@@ -139,16 +140,20 @@ const About = () => {
             transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
           >
             <div className="about-hero__img-frame">
-              <img
-                src="/about-hero-illustration.png"
+              <OptimizedImage
+                src="https://res.cloudinary.com/rlokioxu/image/upload/v1787754197/AboutBanner_hyqnih.png"
                 alt="Healthcare quality professional reviewing quality standards and accreditation documents"
                 className="about-hero__img"
-                loading="eager"
+                priority={true}
+                widths={[400, 600, 800, 1200]}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 500px, 520px"
+                width={520}
+                height={420}
               />
-              <div className="about-hero__img-tag glass">
+              {/* <div className="about-hero__img-tag glass">
                 <LuCircleCheckBig className="about-hero__tag-icon" aria-hidden="true" />
                 <span>Trusted Consultancy</span>
-              </div>
+              </div> */}
             </div>
           </motion.div>
         </div>
@@ -376,13 +381,16 @@ const About = () => {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
           >
             <div className="about-why__img-frame">
-              <img
-                src="/about-whychoose-illustration.png"
+              <OptimizedImage
+                src="https://res.cloudinary.com/rlokioxu/image/upload/v1787754197/About_2_kh1j1l.png"
                 alt="Healthcare professionals collaborating on quality improvement"
                 className="about-why__img"
-                loading="lazy"
+                priority={false}
+                widths={[400, 600, 800, 1000]}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 440px, 500px"
+                width={500}
+                height={400}
               />
-              <div className="about-why__img-backdrop" aria-hidden="true" />
             </div>
           </motion.div>
         </div>

@@ -4,7 +4,7 @@
 
 export const SITE_DOMAIN = 'https://nvrqualitysolutions.com';
 export const SITE_NAME = 'NVR Quality Solutions';
-export const SITE_LOGO = 'https://res.cloudinary.com/rlokioxu/image/upload/v1786013954/nvr-logo_vadrpc.png';
+export const SITE_LOGO = 'https://res.cloudinary.com/rlokioxu/image/upload/f_auto,q_auto:best/v1786013954/nvr-logo_vadrpc.png';
 export const BRAND_DISCLAIMER =
   'NVR Quality Solutions provides training and consultancy in preparation for healthcare quality standards such as NABH, JCI, and CAAM-HP. NVR Quality Solutions does NOT award these certifications.';
 

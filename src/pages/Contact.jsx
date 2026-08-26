@@ -14,52 +14,45 @@ import {
 import InquiryForm from '../components/Contact/InquiryForm';
 import FAQAccordion from '../components/Common/FAQAccordion';
 import SectionTitle from '../components/Common/SectionTitle';
+import OptimizedImage from '../components/Common/OptimizedImage';
 import SEO from '../components/Common/SEO';
 import { seoConfig } from '../config/seoConfig';
 import { generateWebPageSchema } from '../utils/structuredData';
 import './Contact.css';
 
-/* ─── Contact Info Items ────────────────────────────── */
+/* ─── Contact Info Items (Simplified & Clean) ────────── */
 const contactDetails = [
   {
     id: 'phone',
     icon: LuPhone,
-    tag: 'Direct Line',
     title: 'Phone Support',
-    detail: '+91 8466040046',
+    value: '+91 8466040046',
     href: 'tel:+918466040046',
-    actionLabel: 'Call Us Directly',
-    support: 'Speak directly with our healthcare quality advisory team.',
+    subtitle: 'Available 7 days, 9 AM – 9 PM',
   },
   {
     id: 'email',
     icon: LuMail,
-    tag: 'Fast Response',
     title: 'Email Inquiry',
-    detail: 'nvrqualitysolutions@gmail.com',
+    value: 'nvrqualitysolutions@gmail.com',
     href: 'mailto:nvrqualitysolutions@gmail.com',
-    actionLabel: 'Send an Email',
-    support: 'We respond to all email inquiries promptly.',
+    subtitle: 'Fast response to all queries',
   },
   {
     id: 'address',
     icon: LuMapPin,
-    tag: 'Head Office',
     title: 'Office Address',
-    detail: 'Thadepalli, Amaravathi, Andhra Pradesh',
+    value: 'Thadepalli, Amaravathi, AP',
     href: 'https://maps.google.com/?q=Thadepalli,+Amaravathi,+Andhra+Pradesh',
     external: true,
-    actionLabel: 'View Location Map',
-    support: 'Amaravathi, Andhra Pradesh, India.',
+    subtitle: 'Andhra Pradesh, India',
   },
   {
     id: 'hours',
     icon: LuClock,
-    tag: '7 Days Active',
     title: 'Working Hours',
-    detail: '9:00 AM – 9:00 PM',
-    support: 'Available 7 days a week, 12 hours a day (9:00 AM – 9:00 PM) to assist you.',
-    actionLabel: 'Open 7 Days a Week',
+    value: '9:00 AM – 9:00 PM',
+    subtitle: 'Open 7 days a week',
   },
 ];
 
@@ -163,16 +156,20 @@ const Contact = () => {
             transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1], delay: 0.18 }}
           >
             <div className="cnt-hero__img-frame">
-              <img
-                src="/contact-hero-illustration.png"
+              <OptimizedImage
+                src="https://res.cloudinary.com/rlokioxu/image/upload/v1787754197/ContactBanner_kabxus.png"
                 alt="Support team ready to assist with healthcare quality inquiries"
                 className="cnt-hero__img"
-                loading="eager"
+                priority={true}
+                widths={[400, 600, 800, 1200]}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 500px, 520px"
+                width={520}
+                height={420}
               />
-              <div className="cnt-hero__img-tag glass">
+              {/* <div className="cnt-hero__img-tag glass">
                 <LuHeadphones className="cnt-hero__tag-icon" aria-hidden="true" />
                 <span>Working Hours: 9:00 AM – 9:00 PM (7 Days)</span>
-              </div>
+              </div> */}
             </div>
           </motion.div>
         </div>
@@ -194,67 +191,39 @@ const Contact = () => {
             <h2 className="cnt-section-heading">Contact Details</h2>
           </motion.div>
 
-          <div className="cnt-details__cards">
+          <div className="cnt-details__grid">
             {contactDetails.map((item, i) => {
               const Icon = item.icon;
               return (
                 <motion.div
                   key={item.id}
                   id={`cnt-detail-${item.id}`}
-                  className="cnt-info-card"
-                  initial={{ opacity: 0, y: 24 }}
+                  className="cnt-card"
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1], delay: i * 0.08 }}
-                  whileHover={{ y: -4, transition: { duration: 0.22 } }}
+                  transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: i * 0.06 }}
+                  whileHover={{ y: -3, transition: { duration: 0.2 } }}
                 >
-                  <div className="cnt-info-card__header">
-                    <div className="cnt-info-card__icon-wrap" aria-hidden="true">
-                      <Icon className="cnt-info-card__icon" />
-                    </div>
-                    {item.tag && <span className="cnt-info-card__badge">{item.tag}</span>}
+                  <div className="cnt-card__icon-wrap" aria-hidden="true">
+                    <Icon className="cnt-card__icon" />
                   </div>
 
-                  <div className="cnt-info-card__content">
-                    <h3 className="cnt-info-card__title">{item.title}</h3>
-                    <p className="cnt-info-card__detail">
-                      {item.href ? (
-                        <a
-                          href={item.href}
-                          className="cnt-info-card__main-link"
-                          {...(item.external ? { target: '_blank', rel: 'noreferrer' } : {})}
-                        >
-                          {item.detail}
-                        </a>
-                      ) : (
-                        item.detail
-                      )}
-                    </p>
-                    {item.support && (
-                      <p className="cnt-info-card__support">{item.support}</p>
+                  <div className="cnt-card__body">
+                    <span className="cnt-card__title">{item.title}</span>
+                    {item.href ? (
+                      <a
+                        href={item.href}
+                        className="cnt-card__link"
+                        {...(item.external ? { target: '_blank', rel: 'noreferrer' } : {})}
+                      >
+                        {item.value}
+                      </a>
+                    ) : (
+                      <span className="cnt-card__value">{item.value}</span>
                     )}
+                    <span className="cnt-card__subtitle">{item.subtitle}</span>
                   </div>
-
-                  {item.actionLabel && (
-                    <div className="cnt-info-card__footer">
-                      {item.href ? (
-                        <a
-                          href={item.href}
-                          className="cnt-info-card__action-link"
-                          {...(item.external ? { target: '_blank', rel: 'noreferrer' } : {})}
-                        >
-                          <span>{item.actionLabel}</span>
-                          <LuArrowUpRight className="cnt-info-card__arrow-icon" aria-hidden="true" />
-                        </a>
-                      ) : (
-                        <span className="cnt-info-card__action-static">
-                          <span>{item.actionLabel}</span>
-                        </span>
-                      )}
-                    </div>
-                  )}
-
-                  <div className="cnt-info-card__accent" aria-hidden="true" />
                 </motion.div>
               );
             })}
@@ -281,7 +250,7 @@ const Contact = () => {
             <h2 className="cnt-section-heading">
               How Can We Help?
             </h2>
-            <p className="cnt-form-sub">
+            <p className="cnt-section-sub">
               Our team can assist you with
             </p>
           </motion.div>

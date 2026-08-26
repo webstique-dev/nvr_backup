@@ -107,7 +107,7 @@ const Navbar = () => {
       >
         <div className="navbar__inner">
           <NavLink to="/" className="navbar__logo" onClick={closeMenu} aria-label="NVR Quality Solutions Home">
-            <img src="/nvr-logo.png" alt="NVR Quality Solutions Logo" className="navbar__logo-img" />
+            <img src="/nvr-logo.png" alt="NVR Quality Solutions Logo" className="navbar__logo-img" width="160" height="48" decoding="async" />
           </NavLink>
 
           <nav className="navbar__links" aria-label="Primary navigation">
@@ -130,7 +130,7 @@ const Navbar = () => {
           </nav>
 
           <div className="navbar__cta">
-            <Button as="link" to="/contact" variant="dark" showIcon={false}>
+            <Button as="link" to="/contact#send-message" variant="dark" showIcon={false}>
               Get in Touch
             </Button>
           </div>
@@ -171,7 +171,7 @@ const Navbar = () => {
             ))}
 
             <div className="navbar__mobile-cta">
-              <Button as="link" to="/contact" variant="primary" onClick={closeMenu}>
+              <Button as="link" to="/contact#send-message" variant="primary" onClick={closeMenu}>
                 Get in Touch
               </Button>
             </div>

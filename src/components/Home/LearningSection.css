@@ -114,13 +114,6 @@
   z-index: 1;
 }
 
-.learning__img-backdrop {
-  position: absolute;
-  inset: -14px;
-  border-radius: calc(var(--rounded-lg) + 10px);
-  background: linear-gradient(135deg, rgba(15, 63, 184, 0.06), rgba(227, 27, 35, 0.04));
-  z-index: 0;
-}
 
 /* ===========================
    Responsive — Tablet (≤1024px)

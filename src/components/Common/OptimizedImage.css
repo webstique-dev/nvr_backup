@@ -1,0 +1,17 @@
+/* Base optimized image styling */
+.opt-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+}
+
+.opt-img--loading {
+  opacity: 0;
+}
+
+.opt-img--loaded {
+  opacity: 1;
+}
+

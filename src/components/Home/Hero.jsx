@@ -2,10 +2,13 @@ import { motion, useReducedMotion, fadeUp } from '../../animations/motion';
 import { LuCircleCheckBig } from 'react-icons/lu';
 import Button from '../Common/Button';
 import OptimizedImage from '../Common/OptimizedImage';
+import { usePreloader } from '../../context/PreloaderContext';
 import './Hero.css';
 
 const Hero = () => {
   const shouldReduceMotion = useReducedMotion();
+  const { isPreloading } = usePreloader();
+  const isReady = !isPreloading;
 
   return (
     <section className="hero section--dark">
@@ -22,8 +25,8 @@ const Hero = () => {
             className="eyebrow"
             variants={fadeUp}
             initial={shouldReduceMotion ? { opacity: 1, y: 0 } : 'hidden'}
-            animate={shouldReduceMotion ? { opacity: 1, y: 0 } : 'show'}
-            custom={0.05}
+            animate={shouldReduceMotion || isReady ? 'show' : 'hidden'}
+            custom={0.08}
           >
             Healthcare Quality Training &amp; Consultancy
           </motion.span>
@@ -32,8 +35,8 @@ const Hero = () => {
             className="hero__heading"
             variants={fadeUp}
             initial={shouldReduceMotion ? { opacity: 1, y: 0 } : 'hidden'}
-            animate={shouldReduceMotion ? { opacity: 1, y: 0 } : 'show'}
-            custom={0.12}
+            animate={shouldReduceMotion || isReady ? 'show' : 'hidden'}
+            custom={0.16}
           >
             Building Safer Healthcare Through{' '}
             <span className="text-gradient">Quality Excellence</span>
@@ -43,8 +46,8 @@ const Hero = () => {
             className="hero__description"
             variants={fadeUp}
             initial={shouldReduceMotion ? { opacity: 1, y: 0 } : 'hidden'}
-            animate={shouldReduceMotion ? { opacity: 1, y: 0 } : 'show'}
-            custom={0.2}
+            animate={shouldReduceMotion || isReady ? 'show' : 'hidden'}
+            custom={0.24}
           >
             At NVR Quality Solutions, we provide expert-led Healthcare Quality Training, Patient
             Safety Training, and professional consultancy. Every student that leaves us has the
@@ -55,8 +58,8 @@ const Hero = () => {
             className="hero__actions"
             variants={fadeUp}
             initial={shouldReduceMotion ? { opacity: 1, y: 0 } : 'hidden'}
-            animate={shouldReduceMotion ? { opacity: 1, y: 0 } : 'show'}
-            custom={0.28}
+            animate={shouldReduceMotion || isReady ? 'show' : 'hidden'}
+            custom={0.32}
           >
             <Button as="link" to="/training-programs" variant="primary">
               Explore Trainings
@@ -71,8 +74,8 @@ const Hero = () => {
             className="hero__trust"
             variants={fadeUp}
             initial={shouldReduceMotion ? { opacity: 1, y: 0 } : 'hidden'}
-            animate={shouldReduceMotion ? { opacity: 1, y: 0 } : 'show'}
-            custom={0.36}
+            animate={shouldReduceMotion || isReady ? 'show' : 'hidden'}
+            custom={0.4}
           >
             <div className="hero__trust-item">
               <OptimizedImage
@@ -120,8 +123,12 @@ const Hero = () => {
         <motion.div
           className="hero__visual"
           initial={shouldReduceMotion ? { opacity: 1, x: 0, scale: 1 } : { opacity: 0, x: 48, scale: 0.96 }}
-          animate={shouldReduceMotion ? { opacity: 1, x: 0, scale: 1 } : { opacity: 1, x: 0, scale: 1 }}
-          transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1], delay: 0.18 }}
+          animate={
+            shouldReduceMotion || isReady
+              ? { opacity: 1, x: 0, scale: 1 }
+              : { opacity: 0, x: 48, scale: 0.96 }
+          }
+          transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
         >
           <div className="hero__img-frame">
             <OptimizedImage

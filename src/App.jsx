@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from './animations/motion';
 import Navbar from './components/Layout/Navbar';
@@ -6,6 +5,7 @@ import Footer from './components/Layout/Footer';
 import ScrollToTopOnRoute from './components/Common/ScrollToTopOnRoute';
 import ScrollToTopButton from './components/Common/ScrollToTopButton';
 import Preloader from './components/Common/Preloader';
+import { PreloaderProvider, usePreloader } from './context/PreloaderContext';
 
 import Home from './pages/Home';
 import About from './pages/About';
@@ -20,9 +20,9 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditions';
 import NotFound from './pages/NotFound';
 
-function App() {
+function AppContent() {
   const location = useLocation();
-  const [isPreloading, setIsPreloading] = useState(true);
+  const { isPreloading, setIsPreloading } = usePreloader();
 
   return (
     <> 
@@ -58,6 +58,14 @@ function App() {
       <ScrollToTopButton />
       {isPreloading && <Preloader onFinish={() => setIsPreloading(false)} />}
     </>
+  );
+}
+
+function App() {
+  return (
+    <PreloaderProvider>
+      <AppContent />
+    </PreloaderProvider>
   );
 }
 

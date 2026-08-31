@@ -59,7 +59,7 @@ const LearningSection = () => {
         >
           <div className="learning__img-wrap">
             <OptimizedImage
-              src="https://res.cloudinary.com/rlokioxu/image/upload/v1787754198/Home3_lgp63t.png"
+              src="https://res.cloudinary.com/rlokioxu/image/upload/v1788156080/Home3_i5wac1.png"
               alt="Healthcare quality education — professionals mastering quality standards and patient safety"
               className="learning__img"
               priority={false}

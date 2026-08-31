@@ -298,7 +298,7 @@ const TrainingPrograms = () => {
           >
             <div className="tp-hero__img-frame">
               <OptimizedImage
-                src="https://res.cloudinary.com/rlokioxu/image/upload/v1787754200/TrainingBanner_t7jpcb.png"
+                src="https://res.cloudinary.com/rlokioxu/image/upload/v1788156080/TrainingBanner_s1niaq.png"
                 alt="Healthcare quality training programs with industry experts"
                 className="tp-hero__img"
                 priority={true}

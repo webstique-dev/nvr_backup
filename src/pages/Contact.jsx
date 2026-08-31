@@ -157,7 +157,7 @@ const Contact = () => {
           >
             <div className="cnt-hero__img-frame">
               <OptimizedImage
-                src="https://res.cloudinary.com/rlokioxu/image/upload/v1787754197/ContactBanner_kabxus.png"
+                src="https://res.cloudinary.com/rlokioxu/image/upload/v1788156080/ContactBanner_zmd8fn.png"
                 alt="Support team ready to assist with healthcare quality inquiries"
                 className="cnt-hero__img"
                 priority={true}

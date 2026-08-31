@@ -22,7 +22,7 @@ const WhyChooseUs = () => {
         >
           <div className="why-choose__img-frame">
             <OptimizedImage
-              src="https://res.cloudinary.com/rlokioxu/image/upload/v1787754198/Home2_wzbn1i.png"
+              src="https://res.cloudinary.com/rlokioxu/image/upload/v1788156078/Home2_acubp6.png"
               alt="Healthcare professional applying quality standards and accreditation training"
               className="why-choose__img"
               priority={false}

@@ -335,7 +335,7 @@ const Services = () => {
           >
             <div className="svc-hero__img-frame">
               <OptimizedImage
-                src="https://res.cloudinary.com/rlokioxu/image/upload/v1787754199/ServicesBanner_tzghzg.png"
+                src="https://res.cloudinary.com/rlokioxu/image/upload/v1788156079/ServicesBanner_lhiyiq.png"
                 alt="Healthcare quality training and consultancy services overview"
                 className="svc-hero__img"
                 priority={true}
@@ -529,7 +529,7 @@ const Services = () => {
           >
             <div className="svc-consult__img-frame">
               <OptimizedImage
-                src="https://res.cloudinary.com/rlokioxu/image/upload/v1787754198/Services2_ygqss7.png"
+                src="https://res.cloudinary.com/rlokioxu/image/upload/v1788156080/Services2_aca8cn.png"
                 alt="Healthcare Accreditation Consultancy"
                 className="svc-consult__img"
                 priority={false}

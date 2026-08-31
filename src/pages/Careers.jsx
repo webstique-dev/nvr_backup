@@ -211,7 +211,7 @@ const Careers = () => {
           >
             <div className="car-hero__img-frame">
               <OptimizedImage
-                src="https://res.cloudinary.com/rlokioxu/image/upload/v1787754197/CareersBanner_kr325u.png"
+                src="https://res.cloudinary.com/rlokioxu/image/upload/v1788156079/CareersBanner_ouoxcd.png"
                 alt="Healthcare quality professionals collaborating on training and accreditation"
                 className="car-hero__img"
                 priority={true}

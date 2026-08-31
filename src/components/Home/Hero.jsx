@@ -132,7 +132,7 @@ const Hero = () => {
         >
           <div className="hero__img-frame">
             <OptimizedImage
-              src="https://res.cloudinary.com/rlokioxu/image/upload/v1787754198/HomeBanner_jf4ouw.png"
+              src="https://res.cloudinary.com/rlokioxu/image/upload/v1788156080/HomeBanner_nit2e2.png"
               alt="Healthcare professionals reviewing quality standards and accreditation documents"
               className="hero__img"
               priority={true}

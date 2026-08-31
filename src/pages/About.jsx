@@ -141,7 +141,7 @@ const About = () => {
           >
             <div className="about-hero__img-frame">
               <OptimizedImage
-                src="https://res.cloudinary.com/rlokioxu/image/upload/v1787754197/AboutBanner_hyqnih.png"
+                src="https://res.cloudinary.com/rlokioxu/image/upload/v1788156077/AboutBanner_kju1xl.png"
                 alt="Healthcare quality professional reviewing quality standards and accreditation documents"
                 className="about-hero__img"
                 priority={true}
@@ -382,7 +382,7 @@ const About = () => {
           >
             <div className="about-why__img-frame">
               <OptimizedImage
-                src="https://res.cloudinary.com/rlokioxu/image/upload/v1787754197/About_2_kh1j1l.png"
+                src="https://res.cloudinary.com/rlokioxu/image/upload/v1788156060/About_2_hffjtf.png"
                 alt="Healthcare professionals collaborating on quality improvement"
                 className="about-why__img"
                 priority={false}
